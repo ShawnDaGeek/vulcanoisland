@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_station_woodSelling</name>
+        <image>store_sellingStationWood.png</image>
+        <price>5000</price>
+        <dailyUpkeep>7</dailyUpkeep>
+        <functions>
+            <function>$l10n_function_sellingStationWood</function>
+        </functions>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+        <vertexBufferMemoryUsage>901104</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>112548</indexBufferMemoryUsage>
+        <textureMemoryUsage>60128752</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <placeableType>woodSellPlacable</placeableType>
+    <filename>exports/Sellpoints/woodSelling/sellingStationWoodNoSeasons.i3d</filename>
+    <placement testSizeX="18" testSizeZ="16" sizeX="18" sizeZ="16" useRandomYRotation="false" useManualYRotation="true" />
+
+    <woodSellStation stationName="$l10n_station_woodSelling" triggerNode="3|0" sellTrigger="3|1" appearsOnPDA="false" />
+
+    <clearAreas>
+        <clearArea startNode="2|0" widthNode="2|0|0" heightNode="2|0|1"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="2|0" widthNode="2|0|0" heightNode="2|0|1" groundType="concrete" />
+        </levelAreas>
+    </leveling>
+    
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="2|0" widthNode="2|0|0" heightNode="2|0|1" />
+        </maskAreas>
+        <admirers>
+            <snowAdmirer node="6" />
+        </admirers>
+    </seasons>
+
+    <triggerMarkers>
+        <triggerMarker node="4" />
+    </triggerMarkers>
+
+    <tipOcclusionUpdateArea sizeX="22" sizeZ="20" />
+
+    <dayNightObjects>
+        <dayNightObject node="0|0|0" intensityDay="0" intensityNight="1" />
+        <dayNightObject node="0|0|1" visibleDay="false" visibleNight="true" />
+        <dayNightObject node="5|1|0|0|0" intensityDay="0" intensityNight="1" />
+        <dayNightObject node="5|1|0|0|1" visibleDay="false" visibleNight="true" />
+        <dayNightObject node="5|1|1|0|0" intensityDay="0" intensityNight="1" />
+        <dayNightObject node="5|1|1|0|1" visibleDay="false" visibleNight="true" />
+    </dayNightObjects>
+	
+</placeable>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="textures/FS17/road_diffuse.png"/>
+        <File fileId="2" filename="textures/FS17/road_normal.png"/>
+    </Files>
+    <Materials>
+        <Material name="road_mat" materialId="167">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_railroadCrossingSmall.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="railroadCrossingSmall" translation="-682.155 188.04 -776.78" rotation="-2.98651e-13 -45 -1.00179e-05" scale="1.1 1 1.07" static="true" clipDistance="300" nodeId="5627" materialIds="167" castsShadows="true" receiveShadows="true"/>
+    </Scene>
+</i3D>

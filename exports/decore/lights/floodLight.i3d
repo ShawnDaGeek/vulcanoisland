@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="New Empire" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="4" filename="$data/maps/textures/european/props/lightPoleSetGlass_diffuse.png"/>
+        <File fileId="6" filename="$data/maps/textures/european/props/lightPoleSetGlass_specular.png"/>
+        <File fileId="1" filename="$data/maps/textures/european/props/lightPoleSet_diffuse.png"/>
+        <File fileId="8" filename="$data/maps/textures/european/props/lightPoleSet_emissive.png"/>
+        <File fileId="2" filename="$data/maps/textures/european/props/lightPoleSet_normal.png"/>
+        <File fileId="3" filename="$data/maps/textures/european/props/lightPoleSet_specular.png"/>
+        <File fileId="7" filename="$data/shaders/dashboardLightsShader.xml"/>
+        <File fileId="5" filename="$data/shared/default_normal.png"/>
+    </Files>
+    <Materials>
+        <Material name="UnnamedMaterial" materialId="1083" diffuseColor="1 1 1 1"/>
+        <Material name="lightPoleSetGlass_mat" materialId="168" alphaBlending="true" customShaderId="7">
+            <Texture fileId="4"/>
+            <Normalmap fileId="5"/>
+            <Glossmap fileId="6"/>
+            <Custommap name="mEmissiveMap" fileId="8"/>
+            <CustomParameter name="lightControl" value="1 1 1 1"/>
+        </Material>
+        <Material name="lightPoleSet_mat" materialId="214">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="floodLight.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="floodLight" translation="-31.1874 89.4319 -3993.89" nodeId="374436">
+            <Shape shapeId="1" name="floodLight30m" clipDistance="1800" nodeId="374437" materialIds="214" castsShadows="true" receiveShadows="true">
+                <TransformGroup name="illum" nodeId="374438">
+                    <Shape shapeId="2" name="glass" translation="0 0 -7.01516e-05" clipDistance="1800" nodeId="374439" materialIds="168" castsShadows="true" receiveShadows="true"/>
+                    <Light name="spotLight" translation="5.49546e-06 15.099 -1.15579e-05" rotation="-90 0 0" visibility="false" clipDistance="1800" nodeId="374440" type="spot" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="450" coneAngle="155" dropOff="2.15"/>
+                </TransformGroup>
+                <Shape shapeId="3" name="colPart" visibility="false" static="true" nodeId="374441" materialIds="1083" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </Shape>
+            <TransformGroup name="areas" nodeId="374442">
+                <TransformGroup name="start" translation="-1 0 1" nodeId="374443">
+                    <TransformGroup name="width" translation="2 0 0" nodeId="374444"/>
+                    <TransformGroup name="height" translation="0 0 -2" nodeId="374445"/>
+                </TransformGroup>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="374438">
+            <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

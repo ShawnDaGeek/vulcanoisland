@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CustomShader version="3">
+    <Textures>
+        <Texture name = "mMaskMap"       defaultColorProfile = "linearRGB"   group="base"  defaultFilename = "../shared/default_specular.png"/>
+        <Texture name = "mDirtDiffuse"   defaultColorProfile = "sRGB"        group="base"  defaultFilename = "../shared/mapDirt_diffuse.png"/>
+        <Texture name = "mDirtNormal"    defaultColorProfile = "linearRGB"   group="base"  defaultFilename = "../shared/mapDirt_normal.png"/>
+        <Texture name = "mMossDiffuse"   defaultColorProfile = "sRGB"        group="base"  defaultFilename = "../shared/mapMoss_diffuse.png"/>
+        <Texture name = "mMossNormal"    defaultColorProfile = "linearRGB"   group="base"  defaultFilename = "../shared/mapMoss_normal.png"/>
+        <Texture name = "mGradientMap"   defaultColorProfile = "sRGB"        group="color" defaultFilename = "../shared/defaultGradient_diffuse.png"/>
+        <Texture name = "baseMap"   group = "array" type = "2dArray"/>
+        <Texture name = "normalMap" group = "array" type = "2dArray"/>
+        <Texture name = "glossMap"  group = "array" type = "2dArray"/>
+    </Textures>
+    <VertexAttributes>
+        <VertexAttribute name="uv1" group="base"/>
+    </VertexAttributes>
+    <Variations>
+        <Variation name = "COLOR_MASK" groups="base color">
+<![CDATA[
+    // if uv.x<0 load gradientMap from baseMap
+    #define COLOR_MASK
+]]>
+        </Variation>
+        <Variation name = "USE_TEXTURE_ARRAY" groups="base array">
+<![CDATA[
+    // Force baseMap, normalMap, glossMap to arrays
+    #define USE_TEXTURE_ARRAY
+]]>
+        </Variation>
+        <Variation name = "USE_TEXTURE_ARRAY_COLOR_MASK" groups="base color array">
+<![CDATA[
+    // Force baseMap, normalMap, glossMap to arrays
+    #define USE_TEXTURE_ARRAY
+    #define COLOR_MASK
+]]>
+        </Variation>
+    </Variations>
+    <LodLevel startDistance="0">
+        <CodeInjections>
+            <CodeInjection position="SHARED_START">
+<![CDATA[
+#if defined( USE_TEXTURE_ARRAY )
+    #undef ALBEDO_MAP
+    #undef NORMAL_MAP
+    #undef GLOSS_MAP
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position = "SAMPLERS">
+<![CDATA[
+#if defined( USE_TEXTURE_ARRAY )
+    sampler2DArray baseMap;
+    sampler2DArray normalMap;
+    sampler2DArray glossMap;
+#endif
+sampler2D mMaskMap;
+sampler2D mDirtDiffuse;
+sampler2D mDirtNormal;
+sampler2D mMossDiffuse;
+sampler2D mMossNormal;
+#if defined( COLOR_MASK )
+    sampler2D mGradientMap;
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position = "FS_GLOBALS">
+<![CDATA[
+    float  gMossMask;
+    float  gAO;
+    float  gDirtMask;
+    float4 gDirtDiffuse; // alpha channel must be exists with black-white gradients
+    float4 gDirtNormal; 
+    float  gDirtRough;
+    float4 gMossDiffuse; // alpha channel must be exists with black-white gradients
+    float4 gMossNormal;
+    float  gMossRough;
+    float  gIndex;
+]]>
+            </CodeInjection>
+            <CodeInjection position="VS_OUTPUT">
+<![CDATA[
+    float2 maskMapTexCoords : TEXCOORDn;
+    float2 texCoordsX       : TEXCOORDn;
+    float2 texCoordsY       : TEXCOORDn;
+    float2 texCoordsZ       : TEXCOORDn;
+    float3 localNormal      : TEXCOORDn;
+]]>
+            </CodeInjection>
+            <CodeInjection position="POST_SET_TEXCOORDS_VS">
+<![CDATA[
+    Out.maskMapTexCoords = convertDefaultTexCoords( In, In.texCoords1.xy ); // Pass second UVSet to the Pixel Shader
+    float3 localPosition = In.position.xyz;
+    float mUVScale = 1.0;
+    Out.texCoordsX = mUVScale * localPosition.yz;
+    Out.texCoordsY = mUVScale * localPosition.xz;
+    Out.texCoordsZ = mUVScale * localPosition.xy;
+    Out.localNormal = normalize(In.normal.xyz);
+]]>
+            </CodeInjection>
+            <CodeInjection position = "START_FS">
+<![CDATA[
+    globals.gMossMask = 0.0;
+    globals.gAO       = 1.0;
+    globals.gDirtMask = 0.0;
+    globals.gDirtDiffuse = float4( 0.5,0.5,0.5,1.0 );
+    globals.gDirtNormal  = float4( 0.5,0.5,1.0,1.0 );
+    globals.gDirtRough   = 0.9865; 
+    globals.gMossDiffuse = float4( 0.5,0.5,0.5,1.0 );
+    globals.gMossNormal  = float4( 0.5,0.5,1.0,1.0 );  
+    globals.gMossRough   = 0.9865;
+    {
+        float3 mAbsNormal   = abs(In.vs.localNormal);
+        mAbsNormal /= (mAbsNormal.x + mAbsNormal.y + mAbsNormal.z);
+        float2 uvs = mAbsNormal.x > mAbsNormal.y ? (mAbsNormal.x > mAbsNormal.z ? In.vs.texCoordsX : In.vs.texCoordsZ) : (mAbsNormal.y > mAbsNormal.z ? In.vs.texCoordsY : In.vs.texCoordsZ);
+        globals.gDirtDiffuse = tex2D( mDirtDiffuse, uvs ).rgba;
+        globals.gDirtNormal  = tex2D( mDirtNormal,  uvs ).rgba;
+        globals.gMossDiffuse = tex2D( mMossDiffuse, uvs ).rgba;
+        globals.gMossNormal  = tex2D( mMossNormal,  uvs ).rgba;
+    }
+    float3 mMask  = tex2D( mMaskMap, In.vs.maskMapTexCoords ).rgb;
+    globals.gMossMask = mMask.r;
+    globals.gAO       = mMask.g;
+    globals.gDirtMask = mMask.b;
+    globals.gIndex = floor(In.vs.ALBEDOMAP_TEXCOORD.y + 8.0);
+]]>
+            </CodeInjection>
+            <CodeInjection position = "GET_UNNORMALIZED_TANGENT_SPACE_NORMAL_FS">
+<![CDATA[
+#if defined( USE_TEXTURE_ARRAY )
+    #define NORMAL_MAP
+#endif
+#if defined( NORMAL_MAP )
+    float3 mNormal;
+    #if defined( USE_TEXTURE_ARRAY )
+        mNormal   = tex2D( normalMap, float3(In.vs.NORMALMAP_TEXCOORD, globals.gIndex) ).xyz - 0.5;
+    #else
+        mNormal   = tex2D( normalMap, In.vs.NORMALMAP_TEXCOORD ).xyz - 0.5;
+    #endif   
+    float3 mMossNmap = globals.gMossNormal.xyz - 0.5;
+    float3 mDirtNmap = globals.gDirtNormal.xyz - 0.5;
+    mNormal.xy += mMossNmap.xy*globals.gMossMask + mDirtNmap.xy*globals.gDirtMask;
+    return mNormal;
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position = "GET_TANGENT_SPACE_NORMAL_FS">
+<![CDATA[
+#if defined( NORMAL_MAP )
+    return normalize(getUnnormalizedTangentSpaceNormal(In, globals));
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position = "POST_DIFFUSE_COLOR_FS">
+<![CDATA[
+#if defined( USE_TEXTURE_ARRAY )
+    #define ALBEDO_MAP
+#endif
+#if defined(ALBEDO_MAP)
+    #if defined( USE_TEXTURE_ARRAY )
+        diffuseColor = tex2D(baseMap, float3(In.vs.ALBEDOMAP_TEXCOORD, globals.gIndex)).xyz;
+    #else
+        diffuseColor = tex2D(baseMap, In.vs.ALBEDOMAP_TEXCOORD).xyz;
+    #endif 
+    #if  defined( COLOR_MASK )
+        if ( In.vs.ALBEDOMAP_TEXCOORD.x < 0.0 ){
+            float y = 0.5;
+            #if defined( USE_TEXTURE_ARRAY )
+                y = (globals.gIndex+0.5) / 16.0;
+            #endif
+            float x = diffuseColor.r * 0.5 + 0.25; // Lookup from middle of left pixel to middle of right pixel
+            diffuseColor = tex2D( mGradientMap, float2(x,y) ).xyz;
+        }
+    #endif
+    diffuseColor.rgb = lerp( diffuseColor.rgb, globals.gMossDiffuse.rgb, globals.gMossMask );  
+    diffuseColor.rgb = lerp( diffuseColor.rgb, globals.gDirtDiffuse.rgb, globals.gDirtMask );
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position = "POST_GLOSS_COLOR_FS">
+<![CDATA[
+#if defined( USE_TEXTURE_ARRAY )
+    #define GLOSS_MAP
+#endif
+#if defined(GLOSS_MAP)
+    #if defined( USE_TEXTURE_ARRAY )
+        float3 pbrMapValues = tex2D(glossMap, float3(In.vs.GLOSSMAP_TEXCOORD, globals.gIndex)).xyz;
+        roughness    = 1-pbrMapValues.x;
+        bakedAO      = pbrMapValues.y;
+        metalness    = pbrMapValues.z;
+    #endif 
+    roughness = lerp( roughness, globals.gMossRough, globals.gMossMask );  
+    roughness = lerp( roughness, globals.gDirtRough, globals.gDirtMask );
+    metalness = lerp( metalness, 0.0, globals.gMossMask );
+    metalness = lerp( metalness, 0.0, globals.gDirtMask );
+    bakedAO  *= globals.gAO;
+#endif
+]]>
+            </CodeInjection>
+        </CodeInjections>
+    </LodLevel>
+</CustomShader>

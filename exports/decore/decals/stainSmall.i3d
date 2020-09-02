@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="MVP 19" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="4" filename="$data/shaders/decalShader.xml"/>
+        <File fileId="1" filename="textures/puddle_01_diffuse.png"/>
+        <File fileId="2" filename="textures/puddle_01_normal.png"/>
+        <File fileId="3" filename="textures/puddle_01_specular.png"/>
+    </Files>
+    <Materials>
+        <Material name="puddle_01_mat" materialId="26" alphaBlending="true" customShaderId="4">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="stainSmall.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="puddle_" translation="-4.02674 0.0872824 2.48874" rotation="180 -26.061 180" static="true" clipDistance="300" nodeId="57017" materialIds="26" castsShadows="true" receiveShadows="true"/>
+    </Scene>
+</i3D>

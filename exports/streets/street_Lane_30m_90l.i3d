@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="textures/FS17/Roads/lane_diffuse.dds"/>
+        <File fileId="1" filename="textures/FS17/Roads/verge.dds"/>
+    </Files>
+    <Materials>
+        <Material name="verge_diffuse" materialId="382">
+            <Texture fileId="1"/>
+        </Material>
+        <Material name="lane_diffuse" materialId="501">
+            <Texture fileId="2"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_Lane_30m_90l.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="CurveLane30m90left" translation="-550.663 -41.2513 -439.685" rotation="-180 40 -180" static="true" clipDistance="500" nodeId="3360" materialIds="382,501" receiveShadows="true"/>
+    </Scene>
+</i3D>

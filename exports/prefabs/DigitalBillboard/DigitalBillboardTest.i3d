@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="New Empire Ads" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="6" filename="DigitalBillboard_diffuse.dds"/>
+    <File fileId="4" filename="DigitalBillboard_normal.dds"/>
+    <File fileId="5" filename="DigitalBillboard_specular.dds"/>
+    <File fileId="1" filename="ImageSlider_diffuse.dds"/>
+    <File fileId="2" filename="ImageSlider_normal.dds"/>
+    <File fileId="3" filename="ImageSlider_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert1" materialId="113" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="imageSlider_mat" materialId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="billboard_mat" materialId="5">
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="DigitalBillboardTest.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="billboard" translation="134.303 89.4553 98.3306" nodeId="16339">
+      <TransformGroup name="slidingImages" nodeId="16340">
+        <Shape shapeId="1" name="image_4" translation="-1.0174 4.45228 0.429787" clipDistance="300" nodeId="16341" materialIds="4" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="2" name="image_5" translation="-1.0174 4.45228 0.429787" visibility="false" clipDistance="300" nodeId="16342" materialIds="4" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="3" name="image_1" translation="-1.0174 4.45228 0.429787" visibility="false" clipDistance="300" nodeId="16343" materialIds="4" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="image_2" translation="-1.0174 4.45228 0.429787" visibility="false" clipDistance="300" nodeId="16344" materialIds="4" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="5" name="image_3" translation="-1.0174 4.45228 0.429787" visibility="false" clipDistance="300" nodeId="16345" materialIds="4" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      </TransformGroup>
+      <TransformGroup name="lods" nodeId="16346" lodDistance="0 25 50">
+        <Shape shapeId="6" name="digitalBillboard_LOD0" clipDistance="50" nodeId="16347" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="7" name="digitalBillboard_LOD1" clipDistance="70" nodeId="16348" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="8" name="digitalBillboard_LOD2" clipDistance="500" nodeId="16349" materialIds="5" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+      <Shape shapeId="9" name="ledScreen" translation="-1.0174 4.45228 0.429012" clipDistance="300" nodeId="16350" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="10" name="decal" translation="0.367981 2.89194 0.432029" clipDistance="40" nodeId="16351" materialIds="5" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      <Shape shapeId="11" name="collision_1" translation="0.0167673 1.47951 -0.0875806" visibility="false" static="true" clipDistance="400" nodeId="16352" materialIds="113" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <Shape shapeId="12" name="collision_2" translation="-1.01115 4.32263 0.12933" visibility="false" static="true" clipDistance="400" nodeId="16353" materialIds="113" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="16340">
+      <Attribute name="onCreate" type="scriptCallback" value="modOnCreate.DigitalBillboard"/>
+      <Attribute name="shuffleImages" type="boolean" value="true"/>
+      <Attribute name="swapInterval" type="float" value="15"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_station_woodChipSelling</name>
+        <image>store_sellingStationWoodChips.png</image>
+        <price>5000</price>
+        <dailyUpkeep>3</dailyUpkeep>
+        <functions>
+            <function>$l10n_function_sellingStationWoodChips</function>
+        </functions>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+        <vertexBufferMemoryUsage>20400</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>3072</indexBufferMemoryUsage>
+        <textureMemoryUsage>1354624</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <placeableType>sellingStation</placeableType>
+    <filename>sellingStationWoodChips.i3d</filename>
+    <placement testSizeX="6" testSizeZ="6" sizeX="6" sizeZ="6" useRandomYRotation="false" useManualYRotation="true" />
+
+    <sellingStation stationName="$l10n_station_woodChipSelling" appearsOnPDA="true" storageRadius="0" litersForFullPriceDrop="100000" fullPriceRecoverHours="48">
+        <unloadTrigger exactFillRootNode="0|0|0|0|0" baleTriggerNode="0|0|0|0|1"/>
+        <fillType name="woodChips" priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+    </sellingStation>
+
+    <clearAreas>
+        <clearArea startNode="1|0" widthNode="1|0|0" heightNode="1|0|1"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="1|0" widthNode="1|0|0" heightNode="1|0|1" groundType="dirt"/>
+        </levelAreas>
+    </leveling>
+
+    <triggerMarkers>
+        <triggerMarker node="3" />
+    </triggerMarkers>
+
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="1|0" widthNode="1|0|0" heightNode="1|0|1" />
+        </maskAreas>
+    </seasons>
+
+    <tipOcclusionUpdateArea sizeX="4" sizeZ="4" />
+
+</placeable>

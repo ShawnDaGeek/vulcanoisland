@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CustomShader version="4">
+  <Parameters>
+    <Parameter name="terrainLodBlendInfos" target="terrainLodBlendInfos" type="float4" />
+    <Parameter name="terrainSizeInvSizeScaleXZScaleY" target="terrainSizeInvSizeScaleXZScaleY" type="float4" />
+    <Parameter name="terrainPatchOffset" target="terrainPatchOffset" type="float4" />
+  </Parameters>
+  <Textures>
+    <Texture name="terrainHeightMap" defaultColorProfile="linearRGB"/>
+    <Texture name="lodDiffuseMap" type="2dArray" defaultColorProfile="sRGB"/>
+    <Texture name="lodTypeMap" defaultColorProfile="linearRGB"/>
+    <Texture name="lodNormalMap" defaultColorProfile="linearRGB"/>
+    <Texture name="infoLayerMap" defaultColorProfile="linearRGB" isOptional="true"/>
+    <Texture name="layerParameters" defaultColorProfile="linearRGB"/>
+    <Texture name="baseMap" type="2dArray"/>
+    <Texture name="normalMap" type="2dArray" isOptional="true"/>
+  </Textures>
+  <VertexAttributes>
+      <IgnoredVertexAttribute name="tangent"/>
+      <IgnoredVertexAttribute name="uv0"/>
+      <IgnoredVertexAttribute name="normal"/>
+  </VertexAttributes>
+  <LodLevel startDistance="0" subsequentPassForceMode="use" alphaForceMode="ignore">
+    <CodeInjections>
+      <CodeInjection position="SHARED_START">
+        <![CDATA[
+#define INTEGER_POSITION
+
+#if defined(NORMAL_MAP)
+#define TERRAIN_NORMAL_MAPPING
+// TODO make this configurable in engine
+#define TERRAIN_NONLINEAR_WEIGHTS
+#endif
+
+// We are going to define our own albedo and normal map handling
+#undef ALBEDO_MAP
+#undef NORMAL_MAP
+#undef PARALLAX_MAP
+]]>
+      </CodeInjection>
+      <CodeInjection position="VS_UNIFORM_INPUT">
+        <![CDATA[
+            uniform float4 terrainLodBlendInfos;
+            uniform float4 terrainSizeInvSizeScaleXZScaleY;
+            uniform float4 terrainPatchOffset;
+]]>
+      </CodeInjection>
+      <CodeInjection position="VS_OUTPUT">
+        <![CDATA[
+            float2 normalMapTexCoords : TEXCOORDn;
+
+            float terrainLodMapWeight0 : TEXCOORDn;
+            float terrainLodMapWeight1 : TEXCOORDn;
+]]>
+      </CodeInjection>
+      <CodeInjection position="POST_SET_TEXCOORDS_VS">
+        <![CDATA[
+            float2 patchCoords = In.position.xy + terrainPatchOffset.xy;
+            float2 terrainTexCoords = patchCoords * terrainSizeInvSizeScaleXZScaleY.y;
+            Out.defaultTexCoords = terrainTexCoords.xy;
+            Out.normalMapTexCoords = terrainTexCoords.xy + 0.5 * terrainSizeInvSizeScaleXZScaleY.y;
+]]>
+      </CodeInjection>
+      <CodeInjection position="GET_POSITION_VS">
+        <![CDATA[
+            float2 patchCoords = In.position.xy + terrainPatchOffset.xy;
+            float3 pos;
+            pos.xz = (patchCoords - 0.5 * terrainSizeInvSizeScaleXZScaleY.x) * terrainSizeInvSizeScaleXZScaleY.z;
+            pos.y = tex2DFetch(terrainHeightMap, min(patchCoords, terrainPatchOffset.zz), 0).r * 65535 * terrainSizeInvSizeScaleXZScaleY.w;
+            return pos;
+]]>
+      </CodeInjection>
+      <CodeInjection position="VS_END">
+      <![CDATA[
+            float viewDistance = length(viewDir);
+            Out.terrainLodMapWeight0 = saturate((viewDistance-terrainLodBlendInfos.x)*terrainLodBlendInfos.y);
+            Out.terrainLodMapWeight1 = saturate((viewDistance-terrainLodBlendInfos.z)*terrainLodBlendInfos.w);
+]]>
+      </CodeInjection>
+      <CodeInjection position="SAMPLERS">
+        <![CDATA[
+
+        sampler2D terrainHeightMap;
+
+        sampler2DArray baseMap;
+#if defined(TERRAIN_NORMAL_MAPPING)
+        sampler2DArray normalMap;
+#endif
+
+        sampler2DArray lodDiffuseMap;
+        sampler2D lodTypeMap;
+
+
+#ifdef SHOW_TERRAIN_INFO_LAYER
+        sampler2D infoLayerMap;
+#endif
+        sampler2D lodNormalMap;
+        samplerBuffer layerParameters;
+
+]]>
+      </CodeInjection>
+     <CodeInjection position="FS_GLOBALS">
+<![CDATA[
+    float3 blendedColor;
+    float3 blendedNormal;
+    float blendedRoughness;
+]]>
+      </CodeInjection>
+      <CodeInjection position="LIB_FUNCTION_FS">
+        <![CDATA[
+
+float3 getTerrainNormal(FS_INPUT In)
+{
+    float3 worldNormal;
+    worldNormal.xz = tex2D(lodNormalMap, In.vs.normalMapTexCoords).xy*2-1; // RG8 stores X,Z
+    worldNormal.y = sqrt(max(0, 1 - dot(worldNormal.xz, worldNormal.xz)));
+    return worldNormal;
+}
+
+#if defined(TERRAIN_NORMAL_MAPPING)
+float3 getTerrainTangent(float3 n)
+{
+    float3 X = float3(n.y,-n.x,0);  // perpendicular to n and roughly along (1,0,0)
+    float3 Z = float3(0,-n.z,n.y);  // perpendicular to n and roughly along (0,0,1)
+                                    // but X and Z are not perpendicular, because the angle between them is not 90
+                                    // but X + Z is still perpendicular to n, and it is the midpoint of the desired vectors
+    float3 XZ = X+Z;
+    float3 XZp = cross(n, XZ);    // this is perpendicular to n and XZ so it's 45 to the other side of one vector
+                                  // (this also has the same length as XZ because |cross(n,XZ)| = |n||XZ|sin(theta) = |XZ|)
+    return normalize(XZ + XZp);   // so the average is the tangent
+}
+#endif
+
+
+
+
+void getDetailAndLodIndex(FS_INPUT In, int2 uv, out int detailIndex, out int lodIndex)
+{
+    float2 tex = tex2DFetch(lodTypeMap, uv, 0).xy;
+    detailIndex = tex.x * 255;
+    lodIndex = tex.y * 255;
+}
+
+void getBlendWeights(float3 linearWeights, float4 tex0, float4 tex1, float4 tex2, float3 contrast, out float3 weights)
+{
+    weights = linearWeights * (float3(tex0.a, tex1.a, tex2.a) + 0.0001);
+
+    // Apply contrast
+    float maxWeight = max(weights.x, max(weights.y, weights.z));
+    float3 transition = maxWeight * contrast;
+    float3 threshold = maxWeight - transition;
+    weights = saturate((weights - threshold) / transition);
+    // Normalize
+    weights /= (weights.x + weights.y + weights.z);
+}
+
+void getIndicesAndWeights(FS_INPUT In, out float3 weights, out int3 indices, out int3 lodIndices)
+{
+    // Move by half a pixel because a pixel defines the center value of a quad
+#if defined(TERRAIN_LOD_TEXTURE_SIZE)
+    float2 stepped = max(In.vs.defaultTexCoords * TERRAIN_LOD_TEXTURE_SIZE - 0.5, 0);
+#else
+    float2 stepped = max(In.vs.defaultTexCoords * terrainPatchOffset.w - 0.5, 0);
+#endif
+    float2 uvFrac = frac(stepped);
+
+    int2 uv0 = int2(stepped);
+    int2 uv1 = int2(uv0.x+1, uv0.y);
+    int2 uv2 = int2(uv0.x, uv0.y+1);
+    int2 uv3 = int2(uv0.x+1, uv0.y+1);
+
+    int i0, i1, i2, i3;
+    int lodi0, lodi1, lodi2, lodi3;
+    getDetailAndLodIndex(In, uv0, i0, lodi0);
+    getDetailAndLodIndex(In, uv1, i1, lodi1);
+    getDetailAndLodIndex(In, uv2, i2, lodi2);
+    getDetailAndLodIndex(In, uv3, i3, lodi3);
+
+    // Define a virtual trianglulation for the texture interpolation
+    // The triangulation is chosen so that we match the edge of the 4 input points
+    // We assume that indices close together have a similar color
+    int diff0 = abs(i0 - i3);
+    int diff1 = abs(i1 - i2);
+    // Flip the triangle along the y axis if needed
+    uvFrac.y = diff0 <= diff1 ? uvFrac.y : 1-uvFrac.y;
+    if (diff0 <= diff1) {
+        lodIndices = int3(lodi0, uvFrac.x > uvFrac.y ? lodi1 : lodi2, lodi3);
+        indices = int3(i0,  uvFrac.x > uvFrac.y ? i1 : i2,  i3);
+    } else {
+        lodIndices = int3(lodi2, uvFrac.x > uvFrac.y ? lodi3 : lodi0, lodi1);
+        indices = int3(i2,  uvFrac.x > uvFrac.y ? i3 : i0,  i1);
+    }
+
+    // Calculate barycentric coordinates
+    float d20 = max(uvFrac.x, uvFrac.y); //uvFrac.x > uvFrac.y ? uvFrac.x : uvFrac.y);
+    float d21 = uvFrac.x + uvFrac.y;
+    float v = 2.0 * d20 - d21;
+    float w = d21 - d20;
+    float u = 1.0f - v - w;
+    weights = float3(u, v, w);
+}
+
+void getBlendedColorAndNormal(FS_INPUT In, out float3 color, out float3 normal, out float roughness)
+{
+    float3 linearWeights;
+    int3 indices;
+    int3 lodIndices;
+    getIndicesAndWeights(In, linearWeights, indices, lodIndices);
+
+    float4 params0 = bufferFetch(layerParameters, indices.x);
+    float4 params1 = bufferFetch(layerParameters, indices.y);
+    float4 params2 = bufferFetch(layerParameters, indices.z);
+
+    float2 uv0 = In.vs.defaultTexCoords * params0.x;
+    float2 uv1 = In.vs.defaultTexCoords * params1.x;
+    float2 uv2 = In.vs.defaultTexCoords * params2.x;
+
+    float4 c0 = tex2D(baseMap, float3(uv0, indices.x));
+    float4 c1 = tex2D(baseMap, float3(uv1, indices.y));
+    float4 c2 = tex2D(baseMap, float3(uv2, indices.z));
+
+    float3 contrast = float3(params0.y, params1.y, params2.y);
+    // Blend twoards linear blending in the distance
+    //contrast = lerp(contrast, 1, In.vs.terrainLodMapWeight0);
+    float3 weights;
+    getBlendWeights(linearWeights, c0, c1, c2, contrast, weights);
+
+    color = c0.xyz * weights.x + c1.xyz * weights.y + c2.xyz * weights.z;
+
+#if defined(USE_LOD_MAP)
+    float3 lodWeights = linearWeights * (lodIndices < 255);
+    float lodWeightSum = lodWeights.x + lodWeights.y + lodWeights.z;
+    if (lodWeightSum > 0.0001) {
+        float3 lodColor = tex2D(lodDiffuseMap, float3(In.vs.defaultTexCoords*16,lodIndices.x)).xyz * lodWeights.x +
+                          tex2D(lodDiffuseMap, float3(In.vs.defaultTexCoords*16,lodIndices.y)).xyz * lodWeights.y +
+                          tex2D(lodDiffuseMap, float3(In.vs.defaultTexCoords*16,lodIndices.z)).xyz * lodWeights.z;
+        color = lerp(color, lodColor, In.vs.terrainLodMapWeight1*lodWeightSum);
+    }
+#endif
+    //return float3(fmod(floor(max(In.vs.defaultTexCoords.xy*terrainPatchOffset.w - 0.5, 0)), 8.0)/8.0,0);
+    //return indexWeights.x; //weights0.x + weights0.y + weights0.z;
+    //return color;
+
+
+#if defined(TERRAIN_NORMAL_MAPPING)
+    float4 n0 = tex2D(normalMap, float3(uv0, indices.x));
+    float4 n1 = tex2D(normalMap, float3(uv1, indices.y));
+    float4 n2 = tex2D(normalMap, float3(uv2, indices.z));
+
+
+    float2 layersNormal = n0.wy * weights.x + n1.wy * weights.y + n2.wy * weights.z;
+
+    layersNormal = layersNormal * 2 - 1;
+
+    float3 terrainNormal = getTerrainNormal(In);
+
+    // Assume that the terrain is not rotated (tangent = world x)
+    normal = normalize(float3(terrainNormal.x + layersNormal.x, terrainNormal.y, terrainNormal.z + layersNormal.y));
+    /*float3 tangentSpaceNormal = float3(layersNormal.xy, sqrt(max(0, 1.0 - dot(layersNormal, layersNormal))));
+    float3 worldTangent = getTerrainTangent(terrainNormal);
+    float3 worldBitangent = cross(worldTangent, terrainNormal);
+    float3x3 worldToTangentSpaceMat = float3x3(worldTangent, worldBitangent, terrainNormal);
+
+    normal = mul(tangentSpaceNormal, worldToTangentSpaceMat); // translate from tangent space to world space*/
+    roughness = 1- (n0.x * weights.x + n1.x * weights.y + n2.x * weights.z);
+#else
+    normal = getTerrainNormal(In);
+    roughness = 1;
+#endif
+}
+
+]]>
+      </CodeInjection>
+      <CodeInjection position="START_FS">
+        <![CDATA[
+            getBlendedColorAndNormal(In, globals.blendedColor, globals.blendedNormal, globals.blendedRoughness);
+        ]]>
+      </CodeInjection>
+      <CodeInjection position="POST_DIFFUSE_COLOR_FS">
+        <![CDATA[
+        diffuseColor = globals.blendedColor;
+        ]]>
+      </CodeInjection>
+      <CodeInjection position="POST_GLOSS_COLOR_FS">
+        <![CDATA[
+        roughness = globals.blendedRoughness;
+        ]]>
+      </CodeInjection>
+      <CodeInjection position="GET_NORMAL_FS">
+        <![CDATA[
+            return globals.blendedNormal;
+        ]]>
+      </CodeInjection>
+      <CodeInjection position="FINAL_POS_FS">
+        <![CDATA[
+#ifdef SHOW_TERRAIN_INFO_LAYER
+            float3 infoColor = tex2D(infoLayerMap, In.vs.defaultTexCoords);
+            oColor.xyz = lerp(oColor.xyz, infoColor, 0.7);
+#endif
+        ]]>
+      </CodeInjection>
+    </CodeInjections>
+  </LodLevel>
+  <LodLevel startDistance="1" copyLastCodeInjections="true" alphaForceMode="ignore">
+    <LodVariation position="before">
+      <![CDATA[
+            #define USE_LOD_MAP
+      ]]>
+    </LodVariation>
+  </LodLevel>
+  <LodLevel startDistance="2" copyLastCodeInjections="true" alphaForceMode="ignore">
+    <LodVariation position="after">
+      <![CDATA[
+            #define USE_LOD_MAP
+      ]]>
+    </LodVariation>
+  </LodLevel>
+</CustomShader>

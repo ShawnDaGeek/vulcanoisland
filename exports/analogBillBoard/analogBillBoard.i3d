@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="Sample Mod Map 2" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="$data/maps/textures/american/props/roadSignsUS_diffuse.dds"/>
+        <File fileId="2" filename="$data/maps/textures/american/props/roadSignsUS_normal.dds"/>
+        <File fileId="3" filename="$data/maps/textures/american/props/roadSignsUS_specular.dds"/>
+        <File fileId="4" filename="textures/CaseIHDecals.png"/>
+    </Files>
+    <Materials>
+        <Material name="lambert2" materialId="113791">
+            <Texture fileId="4"/>
+        </Material>
+        <Material name="roadSigns_mat" materialId="55838">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="analogBillBoard.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="adBillboard" translation="-41.6366 182.669 276.042" rotation="-8.49244e-13 -27.0457 1.73028e-05" scale="2 2 2" static="true" clipDistance="600" nodeId="138220" materialIds="55838" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="lighting" visibility="false" nodeId="138221">
+                <Light name="pointLight1" translation="0.701001 5.2891 1.49074" nodeId="138222" type="point" color="1 1 1" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2"/>
+                <Light name="pointLight2" translation="0.701001 5.2891 0.0499139" nodeId="138223" type="point" color="1 1 1" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2"/>
+                <Light name="pointLight3" translation="0.701001 5.2891 -1.411" nodeId="138224" type="point" color="1 1 1" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2"/>
+            </TransformGroup>
+            <Shape shapeId="2" name="pPlane3" translation="0.226285 6.03967 1.34116e-09" rotation="90 90 1.46399e-05" scale="0.877928 0.955486 0.955486" static="true" nodeId="138225" materialIds="113791" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="138221">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

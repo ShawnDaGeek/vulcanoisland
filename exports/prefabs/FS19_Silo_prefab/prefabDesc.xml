@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>Albert Wesker</author>
+    <version>1.0.0.0</version>
+	<title>
+        <en>Silo Prefab</en>
+    </title>
+	<description>
+        <en><![CDATA[This is a prefab silo.]]></en>
+		<de><![CDATA[Dies ist ein Prefab Silo.]]></de>
+    </description>
+	<categories>
+        <category>Building</category>
+        <category>Static</category>
+    </categories>
+	<prefabs>
+		<prefab name="Silo Prefab" i3dFilename="silo.i3d" />
+    </prefabs>
+</prefabDesc>

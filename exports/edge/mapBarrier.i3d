@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="New Empire" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files/>
+    <Materials>
+        <Material name="Box" materialId="364868" diffuseColor="0.8 0.8 0.8 1" specularColor="0.494118 1 0.494118"/>
+    </Materials>
+    <Shapes externalShapesFile="mapBarrier.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="mapEdge" nodeId="373441">
+            <TransformGroup name="CollisionBoxes" clipDistance="100" nodeId="373442">
+                <Shape shapeId="1" name="collisionBox" translation="-3701.23 44.472 4090.31" scale="1000 76.4005 1" static="true" collisionMask="65535" clipDistance="6000" nodeId="373443" materialIds="364868" nonRenderable="true" distanceBlending="false"/>
+                <Shape shapeId="1" name="collisionBox" translation="-4087.39 82.3505 -3817.73" rotation="0 -90 0" scale="1000 50 1" static="true" collisionMask="65535" clipDistance="6000" nodeId="373444" materialIds="364868" nonRenderable="true"/>
+                <Shape shapeId="1" name="collisionBox" translation="-3694.19 42.323 -4090.25" scale="1000 91.1439 1" static="true" collisionMask="65535" clipDistance="6000" nodeId="373445" materialIds="364868" nonRenderable="true"/>
+                <Shape shapeId="1" name="collisionBox" translation="4091.98 74.4997 -3418.54" rotation="0 -90 0" scale="1000 109.991 1" static="true" collisionMask="65535" clipDistance="6000" nodeId="373446" materialIds="364868" nonRenderable="true"/>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+</i3D>

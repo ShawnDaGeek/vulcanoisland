@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="oilseedRadish" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+    <File fileId="1" filename="oilseedRadish_diffuse.png" relativePath="true"/>
+    <File fileId="4" filename="oilseedRadishLOD_normal_H.png" relativePath="true"/>
+    <File fileId="3" filename="oilseedRadishLOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="2" filename="$data/shaders/fruitGrowthFoliageShader.xml" relativePath="true"/>
+  </Files>
+
+  <Materials>
+    <Material name="oilseedRadish_mat" materialId="1" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="2">
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="16 1024 2 255"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="alphaBlendStartEnd" value="70 75 0 0"/>
+      <Texture fileId="1"/>
+    </Material>
+    <Material name="oilseedRadishLOD_mat" materialId="2" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="2" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="oilseedRadish.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="oilseedRadish" nodeId="1">
+      <Shape name="oilseedRadish" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="2"/>
+    </TransformGroup>
+    <TransformGroup name="LOD" nodeId="3">
+      <Shape name="_01_" shapeId="2" castsShadows="false" receiveShadows="true" materialIds="2" clipDistance="500" nodeId="4"/>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>

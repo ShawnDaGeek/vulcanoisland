@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>3dmxModding</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Small Gasstation</en>
+        <de>Kleine Tankstelle</de>
+        <fr>Petite Stationservice</fr>
+    </title>
+    <description>
+        <en><![CDATA[The gas station can be placed as a decoration on your own yard. A trigger must be installed for a function.]]></en>
+        <de><![CDATA[Die Tankstelle kann als Deko auf dem eigenen Hof platziert werden. Für eine Funktion muss ein Trigger eingebaut werden.]]></de>
+        <fr><![CDATA[La station-service peut être placée comme décoration sur votre propre cour. Un déclencheur doit être installé pour une fonction.]]></fr>
+    </description>
+    <categories>
+        <category>others</category>
+    </categories>
+    <iconFilename>icon_fuelstation.dds</iconFilename>
+    <prefabs>
+        <prefab name="fuelstation" i3dFilename="fuelstation.i3d" />
+    </prefabs>
+</prefabDesc>

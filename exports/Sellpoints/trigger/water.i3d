@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="Sample Mod Map 2" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+    </Asset>
+    <Files/>
+    <Materials>
+        <Material name="UnnamedMaterial" materialId="4" diffuseColor="1 1 1 1"/>
+    </Materials>
+    <Shapes externalShapesFile="water.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="waterFillTriggers" nodeId="155123">
+            <Shape shapeId="1" name="cube" translation="183.308 95.457 -392.556" rotation="1.2704e-05 -89.7046 -2.63642e-05" scale="1.08764 1 0.343124" static="true" trigger="true" collisionMask="1088421888" nodeId="155124" materialIds="4" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="1" name="cube" translation="1101.6 138.224 -1095.47" rotation="180 -76.8313 180" scale="12 1 1.5" static="true" trigger="true" collisionMask="1088421888" nodeId="155125" materialIds="4" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="1" name="cube" translation="-558.026 240.576 -203.425" rotation="6.63003e-08 8.49746 -1.72928e-05" scale="1.14179 1 0.939514" static="true" trigger="true" collisionMask="1088421888" nodeId="155126" materialIds="4" nonRenderable="true" distanceBlending="false"/>
+            <Shape shapeId="1" name="cube" translation="-1523.98 243.179 590.093" rotation="5.13465e-07 82.6631 -1.67934e-05" scale="2.03934 1 0.939514" static="true" trigger="true" collisionMask="1088421888" nodeId="155127" materialIds="4" nonRenderable="true" distanceBlending="false"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

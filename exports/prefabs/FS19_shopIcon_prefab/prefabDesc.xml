@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>GIANTS Software</author>
+    <version>1.0.0.0</version>
+	<title>
+        <en>Vehicle Shop Trigger Prefab</en>
+    </title>
+	<description>
+        <en><![CDATA[This is a prefab used for the modding tutorials.]]></en>
+		<de><![CDATA[Dies ist ein Prefab für die Modding Tutorials.]]></de>
+    </description>
+	<categories>
+        <category>Sign</category>
+        <category>Static</category>
+    </categories>
+	<prefabs>
+		<prefab name="Vehicle Shop Trigger Prefab" i3dFilename="vehicleShopTrigger.i3d" />
+    </prefabs>
+</prefabDesc>

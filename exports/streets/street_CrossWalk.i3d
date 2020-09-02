@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="$data/maps/textures/american/asphaltRoadsUS_diffuse.png"/>
+        <File fileId="2" filename="$data/maps/textures/american/asphaltRoadsUS_normal.png"/>
+        <File fileId="3" filename="$data/maps/textures/american/asphaltRoadsUS_specular.png"/>
+        <File fileId="4" filename="$data/shaders/decalShader.xml"/>
+    </Files>
+    <Materials>
+        <Material name="asphaltRoadsUS_mat" materialId="174" customShaderId="4">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_CrossWalk.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="laneTransit01-120" translation="-528.025 175.244 -603.172" rotation="3.62602 -39.5446 -4.98546" nodeId="37221">
+            <Shape shapeId="1" name="stripThick01" translation="4.19714 0.155162 0.397591" rotation="-0.372683 -5.403 3.95159" static="true" collision="false" clipDistance="120" nodeId="37222" materialIds="174" receiveShadows="true"/>
+            <Shape shapeId="1" name="stripThick01" translation="1.43461 -0.00898445 0.135653" rotation="-0.350803 -5.405 3.71933" static="true" collision="false" clipDistance="120" nodeId="37223" materialIds="174" receiveShadows="true"/>
+            <Shape shapeId="1" name="stripThick01" translation="2.85669 0.0735767 0.270224" rotation="-0.260472 -5.41 2.7607" static="true" collision="false" clipDistance="120" nodeId="37224" materialIds="174" receiveShadows="true"/>
+            <Shape shapeId="1" name="stripThick01" translation="0.00974331 -0.0955536 8.47719e-05" rotation="-0.422151 -5.4 4.47712" static="true" collision="false" clipDistance="120" nodeId="37225" materialIds="174" receiveShadows="true"/>
+            <Shape shapeId="1" name="stripThick01" translation="-1.3995 -0.19275 -0.133462" rotation="-0.388256 -5.402 4.11699" static="true" collision="false" clipDistance="120" nodeId="37226" materialIds="174" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

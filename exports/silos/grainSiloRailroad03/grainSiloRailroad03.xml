@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_storageSilo</name>
+        <functions>
+            <function>$l10n_function_storageSilo</function>
+        </functions>
+        <specs>
+            <capacity>25000000</capacity>
+            <fillTypes>fertilizer liquidFertilizer seeds forage pigFood herbicide lime compost clover wheat barley canola sunflower soybean maize potato sugarBeet sugarCane oat milk wool cotton straw dryGrass_windrow grass_windrow silage chaff forage milk rye onion carrot hops cabbage redCabbage tobacco spelt lettuce poppy millet hemp water
+			</fillTypes>
+        </specs>
+        <image>$data/placeables/mapUS/grainSiloRailroad01/store_grainSiloRailroad01.png</image>
+        <price>200000</price>
+        <canBeSold>false</canBeSold>
+        <showInStore>false</showInStore>
+        <lifetime>10000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+        <vertexBufferMemoryUsage>53144</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>9516</indexBufferMemoryUsage>
+        <textureMemoryUsage>873944</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <placeableType>silo</placeableType>
+    <filename>exports/silos/grainSiloRailroad03/grainSiloRailroad.i3d</filename>
+    <placement testSizeX="1" testSizeZ="1" sizeX="1" sizeZ="1" useRandomYRotation="false" useManualYRotation="true" />
+
+    <loadingStation stationName="Train Silo" appearsOnPDA="true" storageRadius="250" fillSoundIdentifier="fillSound01">
+        <loadTrigger triggerNode="0|1|0|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|0|0|1">
+            <effectNode effectNode="0|1|0|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|0|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|1|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|1|0|1">
+            <effectNode effectNode="0|1|1|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|1|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="1.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|2|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|2|0|1">
+            <effectNode effectNode="0|1|2|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|2|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|3|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|3|0|1">
+            <effectNode effectNode="0|1|3|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|3|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|4|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|4|0|1">
+            <effectNode effectNode="0|1|4|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|4|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|5|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|5|0|1">
+            <effectNode effectNode="0|1|5|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|5|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|6|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|6|0|1">
+            <effectNode effectNode="0|1|6|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|6|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|7|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|7|0|1">
+            <effectNode effectNode="0|1|7|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|7|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|8|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|8|0|1">
+            <effectNode effectNode="0|1|8|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|8|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="1.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|9|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|9|0|1">
+            <effectNode effectNode="0|1|9|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|9|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|10|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|10|0|1">
+            <effectNode effectNode="0|1|10|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|10|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|11|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|11|0|1">
+            <effectNode effectNode="0|1|11|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|11|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+        <loadTrigger triggerNode="0|1|12|0|0" fillLitersPerSecond="5000" dischargeNode="0|1|12|0|1">
+            <effectNode effectNode="0|1|12|0|2|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+            <effectNode effectNode="0|1|12|0|2|1" materialType="smoke"     materialTypeId="1" fadeTime="2.5" />
+        </loadTrigger>
+    </loadingStation>
+
+    <unloadingStation stationName="Unload Silo" appearsOnPDA="false" storageRadius="250" hotspotTextOffset="0px 32px">
+        <unloadTrigger exactFillRootNode="0|0|0|0|0" />
+		<unloadTrigger exactFillRootNode="0|0|1|0|0" />
+		<unloadTrigger exactFillRootNode="0|0|2|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|3|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|4|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|5|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|6|0|0" />
+		<unloadTrigger exactFillRootNode="0|0|7|0|0" />
+		<unloadTrigger exactFillRootNode="0|0|8|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|9|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|10|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|11|0|0" />
+        <unloadTrigger exactFillRootNode="0|0|12|0|0" />
+    </unloadingStation>
+
+    <storages perFarm="true">
+        <storage node="0|2" fillTypes="fertilizer liquidFertilizer seeds forage pigFood herbicide lime compost clover wheat barley canola sunflower soybean maize potato sugarBeet sugarCane oat milk wool cotton straw dryGrass_windrow grass_windrow silage chaff forage milk rye onion carrot hops cabbage redCabbage tobacco spelt lettuce poppy millet hemp water" capacityPerFillType="2500000" costsPerFillLevelAndDay="0.018" />
+    </storages>
+
+</placeable>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foliageType distanceTexturePath="distance">
+    <!-- weed
+
+    0 1 2
+
+    1 0 0 = "invisible state"
+    0 1 0 = "small alive"
+    1 1 0 = "big alive"
+    0 0 1 = "small dead"
+    1 0 1 = "big dead"
+
+    -->
+    <foliageLayer cellSize="8" objectMask="16711935" decalLayer="0" densityMapChannelOffset="0" numDensityMapChannels="3" numBlocksPerUnit="0.65" shapeSource="weed.i3d">
+        <foliageStateDefaults distanceMapLayer="1" widthVariance="0.3" heightVariance="0.4" horizontalPositionVariance="1" />
+        <!-- default LOD distances etc -->
+        <foliageLodDefaults lod="0" viewDistance="20"  blendOutDistance="1" atlasSize="1" atlasOffset="1 0" texCoords="0 0 1 1" />
+        <foliageLodDefaults lod="1" viewDistance="80" blendOutDistance="1" atlasSize="1" atlasOffset="1 0" texCoords="0 0 1 1" />
+        <foliageState distanceMap="acre_fine_distance_diffuse.png" />
+        <!-- 0 1 0 - small alive -->
+        <foliageState width="0.45" height="0.45" numBlocksPerUnit="0.75">
+            <foliageShape>
+                <foliageLod blockShape="0>0|0" />
+                <foliageLod blockShape="0>0|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="0>1|0" />
+                <foliageLod blockShape="0>1|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="0>2|0" />
+                <foliageLod blockShape="0>2|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="0>3|0" />
+                <foliageLod blockShape="0>3|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="0>4|0" />
+                <foliageLod blockShape="0>4|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="0>5|0" />
+                <foliageLod blockShape="0>5|1" />
+            </foliageShape>
+        </foliageState>
+        <!-- 1 1 0 - big alive -->
+        <foliageState width="1.1" height="1.1">
+            <foliageShape>
+                <foliageLod blockShape="1>0|0" />
+                <foliageLod blockShape="1>0|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="1>1|0" />
+                <foliageLod blockShape="1>1|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="1>2|0" />
+                <foliageLod blockShape="1>2|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="1>3|0" />
+                <foliageLod blockShape="1>3|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="1>4|0" />
+                <foliageLod blockShape="1>4|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="1>5|0" />
+                <foliageLod blockShape="1>5|1" />
+            </foliageShape>
+        </foliageState>
+        <!-- 0 0 1 - small dead -->
+        <foliageState width="0.45" height="0.45" numBlocksPerUnit="0.75">
+            <foliageShape>
+                <foliageLod blockShape="2>0|0" />
+                <foliageLod blockShape="2>0|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="2>1|0" />
+                <foliageLod blockShape="2>1|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="2>2|0" />
+                <foliageLod blockShape="2>2|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="2>3|0" />
+                <foliageLod blockShape="2>3|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="2>4|0" />
+                <foliageLod blockShape="2>4|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="2>5|0" />
+                <foliageLod blockShape="2>5|1" />
+            </foliageShape>
+        </foliageState>
+        <!-- 1 0 1 - big dead -->
+        <foliageState width="1.1" height="1.1">
+            <foliageShape>
+                <foliageLod blockShape="3>0|0" />
+                <foliageLod blockShape="3>0|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="3>1|0" />
+                <foliageLod blockShape="3>1|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="3>2|0" />
+                <foliageLod blockShape="3>2|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="3>3|0" />
+                <foliageLod blockShape="3>3|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="3>4|0" />
+                <foliageLod blockShape="3>4|1" />
+            </foliageShape>
+            <foliageShape>
+                <foliageLod blockShape="3>5|0" />
+                <foliageLod blockShape="3>5|1" />
+            </foliageShape>
+        </foliageState>
+        <!--  -->
+    </foliageLayer>
+</foliageType>

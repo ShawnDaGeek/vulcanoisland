@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>TopAce888</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>EasyShed Set Prefab</en>
+        <de>EasyShed Set Prefab</de>
+    </title>
+    <description>
+        <en><![CDATA[This set contains three Easy Sheds with lighting.
+Small Easy Shed 1
+-Dimensions: ca. 18m x 18m
+
+Small Easy Shed 1 with sidewalls
+-Dimensions: ca. 18m x 18m
+
+Small Easy Shed 3 with sidewalls
+-Dimensions: ca. 22m x 26m
+
+For the lighting, habe a look at the added lighting.txt.
+]]>
+        </en>
+        <de><![CDATA[Dieses Set besteht aus drei Easy Sheds mit Beleuchtung.
+
+Kleine Easy Shed 1
+-Maße: ca. 18m x 18m
+
+Kleine Easy Shed 1 mit Seitenwänden
+-Maße: ca. 18m x 18m
+
+Kleine Easy Shed 3  mit Seitenwänden
+-Maße: ca. 22m x 26m
+Für die Beleuchtung, werfe einen Blick in die beigefügte lighting.txt
+]]>
+        </de>
+    </description>
+    <categories>
+        <category>Building</category>
+    </categories>
+    <prefabs>
+        <prefab name="easyShedSet" i3dFilename="easyShedSet.i3d" />
+    </prefabs>
+</prefabDesc>

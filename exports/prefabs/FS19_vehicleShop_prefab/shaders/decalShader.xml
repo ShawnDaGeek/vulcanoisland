@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CustomShader version="3">
+    <Variations>
+        <Variation name="reflector">
+<![CDATA[
+    #define REFLECTOR_SHADING
+]]>
+        </Variation>
+    </Variations>
+    <LodLevel startDistance="0">
+        <CodeInjections>
+            <CodeInjection position = "POST_GET_LIGHTING_FS">
+<![CDATA[
+#if defined( REFLECTOR_SHADING )
+    float VdotL = max(dot(viewDir, lightDir), 0.00001); 
+    float specDistribution  = saturate(pow(VdotL,20));
+    float3 retroReflection = specDistribution * diffuseColor*4;
+    lighting = (atten*NdotL) * (diffuseShading + specularShading + retroReflection) * lightColor;
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position="ALPHA_FS">
+<![CDATA[
+#if defined(ALPHA_BLENDED)
+    reflectingLightingScale = alpha;
+#endif
+]]>
+            </CodeInjection>
+        </CodeInjections>
+    </LodLevel>
+</CustomShader>

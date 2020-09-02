@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="GG island 4x" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+        <File fileId="2" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+        <File fileId="3" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+        <File fileId="16" filename="$data/maps/textures/european/buildingsSigns01_diffuse.png"/>
+        <File fileId="17" filename="$data/maps/textures/european/buildingsSigns01_normal.png"/>
+        <File fileId="18" filename="$data/maps/textures/european/buildingsSigns01_specular.png"/>
+        <File fileId="15" filename="$data/maps/textures/european/buildingsWindows01_diffuse.png"/>
+        <File fileId="13" filename="$data/maps/textures/european/buildingsWindows01_normal.png"/>
+        <File fileId="14" filename="$data/maps/textures/european/buildingsWindows01_specular.png"/>
+        <File fileId="11" filename="$data/maps/textures/european/crane02_specular.png"/>
+        <File fileId="5" filename="$data/maps/textures/european/harborWall_specular.png"/>
+        <File fileId="19" filename="$data/maps/textures/european/leaksDecals_diffuse.png"/>
+        <File fileId="21" filename="$data/maps/textures/european/leaksDecals_specular.png"/>
+        <File fileId="26" filename="$data/maps/textures/european/props/barges/barges_diffuse.png"/>
+        <File fileId="27" filename="$data/maps/textures/european/props/barges/barges_normal.png"/>
+        <File fileId="28" filename="$data/maps/textures/european/props/barges/barges_specular.png"/>
+        <File fileId="24" filename="$data/maps/textures/european/signsShops_diffuse.png"/>
+        <File fileId="12" filename="$data/maps/textures/shared/customGradient01.png"/>
+        <File fileId="10" filename="$data/maps/textures/shared/customGradient06.png"/>
+        <File fileId="20" filename="$data/maps/textures/shared/default_normal.png"/>
+        <File fileId="8" filename="$data/maps/textures/shared/mapRust_diffuse.png"/>
+        <File fileId="9" filename="$data/maps/textures/shared/mapRust_normal.png"/>
+        <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+        <File fileId="22" filename="$data/shaders/decalShader.xml"/>
+        <File fileId="25" filename="$data/shared/default_normal.png"/>
+        <File fileId="23" filename="../exports/MVP19/textures/beton_diffuse.dds"/>
+    </Files>
+    <Materials>
+        <Material name="signsShops_mat" materialId="16041" customShaderId="22">
+            <Texture fileId="24"/>
+            <Normalmap fileId="25"/>
+        </Material>
+        <Material name="buildingsWindows01_mat" materialId="16056" alphaBlending="true">
+            <Normalmap fileId="13"/>
+            <Glossmap fileId="14"/>
+            <Emissivemap fileId="15"/>
+        </Material>
+        <Material name="barges_mat" materialId="16022">
+            <Texture fileId="26"/>
+            <Normalmap fileId="27"/>
+            <Glossmap fileId="28"/>
+        </Material>
+        <Material name="buildingsSigns01_mat" materialId="15985" alphaBlending="true">
+            <Texture fileId="16"/>
+            <Normalmap fileId="17"/>
+            <Glossmap fileId="18"/>
+        </Material>
+        <Material name="leaksDecals_mat" materialId="15972" alphaBlending="true" customShaderId="22">
+            <Texture fileId="19"/>
+            <Normalmap fileId="20"/>
+            <Glossmap fileId="21"/>
+        </Material>
+        <Material name="buildingsArray_mat1" materialId="15947" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="11"/>
+            <Custommap name="mMossDiffuse" fileId="8"/>
+            <Custommap name="mMossNormal" fileId="9"/>
+            <Custommap name="mGradientMap" fileId="12"/>
+        </Material>
+        <Material name="buildingsArray_mat" materialId="15960" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="5"/>
+            <Custommap name="mMossDiffuse" fileId="8"/>
+            <Custommap name="mMossNormal" fileId="9"/>
+            <Custommap name="mGradientMap" fileId="10"/>
+        </Material>
+        <Material name="lambert1" materialId="15940">
+            <Texture fileId="23"/>
+        </Material>
+        <Material name="buildingsArray_mat" materialId="15964" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="11"/>
+            <Custommap name="mMossDiffuse" fileId="8"/>
+            <Custommap name="mMossNormal" fileId="9"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="harbor.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="harbor" translation="141.861 89.9844 -1778.21" nodeId="19324">
+            <Shape shapeId="1" name="harborWallStraightA" translation="-32.8848 -0.00389862 -16.1796" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="19317" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="1" name="harborWallStraightA" translation="-48.8746 -0.00389862 -16.1796" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="19316" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="1" name="harborWallStraightA" translation="-64.8587 -0.00389862 -16.1796" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="19315" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="harborWallEndALeft" translation="-16.8908 0.00389099 -16.1759" rotation="-1.00179e-05 90 0" static="true" clipDistance="2800" nodeId="16478" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="harborWallEndARight" translation="-96.8618 0.00388336 -16.1497" rotation="1.36616e-05 90 0" static="true" clipDistance="2800" nodeId="16449" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="1" name="harborWallStraightA" translation="-96.8511 0.00388336 -16.1642" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="16448" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="1" name="harborWallStraightA" translation="-80.8444 -0.00389862 -16.1796" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="16450" materialIds="15960" castsShadows="true" receiveShadows="true"/>
+            <TransformGroup name="crane02Vis" translation="-75.9092 0.0679474 -7.7345" rotation="5.83099e-16 -0 1.33127e-08" clipDistance="2800" nodeId="16452" lodDistance="0 150">
+                <TransformGroup name="LOD0" nodeId="16453">
+                    <Shape shapeId="4" name="crane02" clipDistance="300" nodeId="16454" materialIds="15964" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="5" name="craneRedParts" clipDistance="300" nodeId="16455" materialIds="15947" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="6" name="craneWindows" clipDistance="100" nodeId="16456" materialIds="16056" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="7" name="signs" translation="0 3.07858 0" clipDistance="150" nodeId="16457" materialIds="15985" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="8" name="leaks" clipDistance="150" nodeId="16458" materialIds="15972" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="9" name="bolts" clipDistance="75" nodeId="16459" materialIds="15964" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="10" name="col" visibility="false" static="true" density="0.0001" nodeId="16460" materialIds="15940" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                    <Shape shapeId="11" name="logos" translation="1.85492 18.5483 6.40065" clipDistance="300" nodeId="16461" materialIds="16041" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="LOD1" nodeId="16462">
+                    <Shape shapeId="12" name="crane02" clipDistance="2800" nodeId="16463" materialIds="15964" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="13" name="craneRedParts" clipDistance="2800" nodeId="16464" materialIds="15947" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+            <Shape shapeId="14" name="barge02" translation="-77.2478 -0.464615 -27.0593" rotation="-0 90 0" static="true" clipDistance="2800" nodeId="17518" materialIds="16022" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

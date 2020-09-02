@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="animalHusbandry" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.0.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/placeables/animalHusbandry/animalHusbandry_diffuse.png"/>
+    <File fileId="3" filename="$data/placeables/animalHusbandry/animalHusbandry_normal.png"/>
+    <File fileId="4" filename="$data/placeables/animalHusbandry/animalHusbandry_specular.png"/>
+    <File fileId="6" filename="$data/placeables/animalHusbandry/foodSilos01_specular.png"/>
+    <File fileId="5" filename="$data/shaders/buildingShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="UnnamedMaterial" materialId="5" diffuseColor="1 1 1 1">
+    </Material>
+    <Material name="limeSilo_mat" materialId="4" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="mMaskMap" fileId="6"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Lime_Station.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="limeStation" nodeId="9">
+      <TransformGroup name="gameplay" nodeId="10">
+        <Shape shapeId="1" name="trigger" static="true" trigger="true" collisionMask="1088421888" nodeId="11" materialIds="5" nonRenderable="true" distanceBlending="false"/>
+        <TransformGroup name="mapPosition" translation="3 0 0" nodeId="12"/>
+      </TransformGroup>
+      <Shape shapeId="2" name="limeSilo" static="true" clipDistance="300" nodeId="13" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <TransformGroup name="clearArea" nodeId="14">
+        <TransformGroup name="start" translation="-2.82569 0 -2.29017" nodeId="15">
+          <TransformGroup name="width" translation="5.74164 0 0" nodeId="16"/>
+          <TransformGroup name="height" translation="0 0 4.81715" nodeId="17"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="levelArea" nodeId="18">
+        <TransformGroup name="start" translation="-3.06624 0 -2.92944" nodeId="19">
+          <TransformGroup name="width" translation="6.23077 0 0" nodeId="20"/>
+          <TransformGroup name="height" translation="0 0 6.3642" nodeId="21"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="9">
+      <Attribute name="mapPositionIndex" type="string" value="0|1"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

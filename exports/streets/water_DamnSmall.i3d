@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="$data/maps/textures/shared/default_normal.png"/>
+        <File fileId="3" filename="$data/maps/textures/shared/default_specular.png"/>
+        <File fileId="5" filename="textures/greenRiver/concrete2.dds"/>
+        <File fileId="4" filename="textures/greenRiver/damgate.dds"/>
+        <File fileId="1" filename="textures/greenRiver/zink_doors.dds"/>
+    </Files>
+    <Materials>
+        <Material name="08 - Default" materialId="58317">
+            <Texture fileId="5"/>
+        </Material>
+        <Material name="Dam_GreenRiver" materialId="58385">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+        <Material name="Box" materialId="58228">
+            <Texture fileId="4"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="water_DamnSmall.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="damNorth" translation="904.379 89.9632 -1003.78" nodeId="80735">
+            <Shape shapeId="1" name="dam" translation="2.17168e-08 -0.498705 0.523975" rotation="0 90 0" static="true" nodeId="80736" materialIds="58385" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="post" translation="-10 0 1.05" rotation="-90 0 0" scale="1 5 0.8" static="true" clipDistance="500" nodeId="80737" materialIds="58228" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="post" translation="10 0 1.05" rotation="-90 0 0" scale="1 5 0.8" static="true" clipDistance="500" nodeId="80738" materialIds="58228" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="post" translation="-10.125 2.3 1.05" rotation="-90 -2.32235e-06 -90" scale="1 5 2.765" static="true" clipDistance="500" nodeId="80739" materialIds="58228" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="post" translation="10.125 2.3 1.05" rotation="-90 0 90" scale="1 5 2.765" static="true" clipDistance="500" nodeId="80740" materialIds="58228" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="wall" translation="6 -4.67835 0.5" rotation="0 90 0" scale="5 2 2" static="true" clipDistance="500" nodeId="80741" materialIds="58317" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="wall" translation="9.85 -1.215 0.5" rotation="0 90 0" scale="5 2 0.985" static="true" clipDistance="500" nodeId="80742" materialIds="58317" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="wall" translation="-9.85 -1.215 0.5" rotation="0 -90 0" scale="5 2 0.985" static="true" clipDistance="500" nodeId="80743" materialIds="58317" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

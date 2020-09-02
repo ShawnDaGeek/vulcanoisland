@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="Sample Mod Map 2" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="textures/ConcreteBare_diffuse.dds"/>
+        <File fileId="7" filename="textures/FloorsRegular_diffuse.dds"/>
+        <File fileId="6" filename="textures/entry_traffic_circle.dds"/>
+        <File fileId="2" filename="textures/portuguese_tiles.dds"/>
+        <File fileId="5" filename="textures/road2_traffic_circle.dds"/>
+        <File fileId="3" filename="textures/road_traffic_circle.dds"/>
+        <File fileId="4" filename="textures/verge.dds"/>
+    </Files>
+    <Materials>
+        <Material name="verge_diffuse" materialId="113600">
+            <Texture fileId="4"/>
+        </Material>
+        <Material name="concrete_diffuse" materialId="113555">
+            <Texture fileId="1"/>
+        </Material>
+        <Material name="floorregular_diffuse" materialId="113612">
+            <Texture fileId="7"/>
+        </Material>
+        <Material name="entry_traffic_circle" materialId="113635">
+            <Texture fileId="6"/>
+        </Material>
+        <Material name="road_traffic_circle" materialId="113642">
+            <Texture fileId="3"/>
+        </Material>
+        <Material name="portuguese_tiles" materialId="113724">
+            <Texture fileId="2"/>
+        </Material>
+        <Material name="road2_traffic_circle" materialId="113768">
+            <Texture fileId="5"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_circleRoundAboutLarge02.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="traffic_circle" translation="-131.875 81.91 782.303" rotation="0 -100 0" static="true" nodeId="140749" materialIds="113555,113724" receiveShadows="true">
+            <Shape shapeId="2" name="traffic_circle_10" rotation="180 45.1518 180" static="true" nodeId="140750" materialIds="113642,113600" receiveShadows="true"/>
+            <Shape shapeId="3" name="traffic_circle_5" rotation="-180 44.64 -180" static="true" nodeId="140751" materialIds="113642,113600" receiveShadows="true"/>
+            <Shape shapeId="4" name="traffic_circle_entry" static="true" nodeId="140752" materialIds="113768,113600,113635,113612,113555,113642" receiveShadows="true"/>
+            <Shape shapeId="4" name="traffic_circle_entry" rotation="180 0.586 180" static="true" nodeId="140753" materialIds="113768,113600,113635,113612,113555,113642" receiveShadows="true"/>
+            <Shape shapeId="5" name="traffic_circle_90" rotation="180 50.59 180" static="true" nodeId="140754" materialIds="113642,113600" receiveShadows="true"/>
+            <Shape shapeId="2" name="traffic_circle_10" rotation="-9.64539e-07 41.224 2.66858e-05" static="true" nodeId="140755" materialIds="113642,113600" receiveShadows="true"/>
+            <Shape shapeId="4" name="traffic_circle_entry" rotation="180 80 180" static="true" nodeId="140756" materialIds="113768,113600,113635,113612,113555,113642" receiveShadows="true"/>
+            <Shape shapeId="2" name="traffic_circle_10" rotation="180 35.297 180" static="true" nodeId="140757" materialIds="113642,113600" receiveShadows="true"/>
+            <Shape shapeId="3" name="traffic_circle_5" translation="0 -0.001 0" rotation="180 -59.4509 180" static="true" nodeId="140758" materialIds="113642,113600" receiveShadows="true"/>
+        </Shape>
+    </Scene>
+</i3D>

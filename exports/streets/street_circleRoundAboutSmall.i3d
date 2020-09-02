@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="Textures/Round_diffuse.dds"/>
+        <File fileId="2" filename="Textures/roadCrossing_normal.dds"/>
+        <File fileId="3" filename="Textures/roadCrossing_specular.dds"/>
+    </Files>
+    <Materials>
+        <Material name="xJunction" materialId="55366">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_circleRoundAboutSmall.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="Roundaboutsmall" translation="434.712 -99.3527 -18.4035" rotation="0 18.779 0" static="true" clipDistance="450" nodeId="77154" materialIds="55366" castsShadows="true" receiveShadows="true"/>
+    </Scene>
+</i3D>

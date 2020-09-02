@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="fuelstation" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="1" filename="fuelstation_diffuse.png"/>
+    <File fileId="2" filename="fuelstation_normal.png"/>
+    <File fileId="3" filename="fuelstation_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="fuelstation_mat" materialId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="fuelstation.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="fuelstation" static="true" clipDistance="500" nodeId="7" materialIds="4" castsShadows="true" receiveShadows="true"/>
+  </Scene>
+
+</i3D>

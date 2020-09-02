@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="New/models/andre/CooperativeT1.dds"/>
+    </Files>
+    <Materials>
+        <Material name="lambert2" materialId="52278" specularColor="0.458824 1 0.466667">
+            <Texture fileId="1"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="siloLarge.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="Getreidebunker" translation="-2742.29 15.892 505.168" rotation="8.45588e-07 -0.43 -9.18234e-09" scale="1.13974 1.13974 1.13974" nodeId="92109">
+            <Shape shapeId="1" name="MoulinMy7Farmer" translation="-0.217878 0 -8.84202" scale="1.1405 1 1.30302" static="true" nodeId="92110" materialIds="52278" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="MoulinMy7FarmerFBXASC046001" translation="0 0 -0.909143" static="true" nodeId="92111" materialIds="52278" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="TreillisVerticaleFBXASC046004" nodeId="92112" materialIds="52278" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="4" name="SiloFBXASC046001" translation="0.555981 0.063 -6.05067" static="true" nodeId="92113" materialIds="52278" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="4" name="SiloFBXASC046001" translation="0.555981 0.071 4.52048" static="true" nodeId="92114" materialIds="52278" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

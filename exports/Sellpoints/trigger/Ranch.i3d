@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="13" filename="$data/maps/textures/shared/metalGridGrating_diffuse.png"/>
+    <File fileId="14" filename="$data/maps/textures/shared/metalGridGrating_normal.png"/>
+    <File fileId="15" filename="$data/maps/textures/shared/metalGridGrating_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/shared/sellingStationGeneric_ao.png"/>
+    <File fileId="2" filename="$data/maps/textures/shared/sellingStationGeneric_diffuse.png"/>
+    <File fileId="3" filename="$data/maps/textures/shared/sellingStationGeneric_normal.png"/>
+    <File fileId="4" filename="$data/maps/textures/shared/sellingStationGeneric_specular.png"/>
+    <File fileId="16" filename="$data/maps/textures/shared/warningStripes_diffuse.png"/>
+    <File fileId="17" filename="$data/maps/textures/shared/warningStripes_normal.png"/>
+    <File fileId="11" filename="$data/maps/textures/shared/wheatBottom_diffuse.png"/>
+    <File fileId="12" filename="$data/maps/textures/shared/wheatBottom_normal.png"/>
+    <File fileId="5" filename="$data/shaders/buildingShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="wheatBottom_mat" materialId="5">
+      <Texture fileId="11"/>
+      <Normalmap fileId="12"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="4" specularColor="0.494118 1 0.494118">
+      <Texture fileId="16"/>
+      <Normalmap fileId="17"/>
+    </Material>
+    <Material name="sellingStationGeneric_mat" materialId="6" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="mMaskMap" fileId="6"/>
+    </Material>
+    <Material name="metalGridGrating_mat" materialId="7">
+      <Texture fileId="13"/>
+      <Normalmap fileId="14"/>
+      <Glossmap fileId="15"/>
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Ranch.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="sellingStationGeneric" nodeId="16">
+      <TransformGroup name="gameplay" nodeId="17">
+        <TransformGroup name="IN" nodeId="18">
+          <TransformGroup name="unloadingStation" scale="1 2 1" nodeId="19">
+            <TransformGroup name="unloadingTriggers" nodeId="20">
+              <Shape shapeId="1" name="exactFillRootNode" translation="0 0.348673 0" static="true" collisionMask="1073741824" nodeId="21" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="2" name="baleTrigger" translation="0 -0.45 0" static="true" trigger="true" collisionMask="16781312" nodeId="22" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="3" name="sellingStationGeneric" static="true" clipDistance="400" nodeId="23" materialIds="6" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="4" name="sellingStationGenericGrainPlane" clipDistance="100" nodeId="24" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="5" name="sellingStationGenericGrid" static="true" clipDistance="400" nodeId="25" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="6" name="sellingStationGenericWarningStripes" clipDistance="200" nodeId="26" materialIds="4" receiveShadows="true"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

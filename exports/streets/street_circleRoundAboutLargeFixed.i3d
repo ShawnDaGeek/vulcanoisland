@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="New Empire" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="textures/road_diffuse.dds"/>
+        <File fileId="2" filename="textures/road_normal.dds"/>
+        <File fileId="3" filename="textures/road_specular.dds"/>
+    </Files>
+    <Materials>
+        <Material name="street20m" materialId="115">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_circleRoundAboutLargeFixed.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="Roundabout" translation="49.6127 89.535 19.2943" rotation="180 -0 180" scale="3 2 3" clipDistance="1500" nodeId="10347">
+            <Shape shapeId="1" name="roundaboutDualCentre" static="true" clipDistance="1200" nodeId="10348" materialIds="115" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="roundaboutDualEntry" rotation="0 0 -4.6838e-09" static="true" clipDistance="1200" nodeId="10349" materialIds="115,115" castsShadows="true" receiveShadows="true">
+                <TransformGroup name="EnlishLines" clipDistance="200" nodeId="10350">
+                    <Shape shapeId="3" name="roundaboutDualLinesEnglish" static="true" clipDistance="200" nodeId="10351" materialIds="115" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </Shape>
+            <Shape shapeId="4" name="roundaboutDual45" rotation="-180 24.0825 -180" static="true" clipDistance="1200" nodeId="10352" materialIds="115,115" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="roundaboutDualEntry" rotation="180 0 180" static="true" clipDistance="1200" nodeId="10353" materialIds="115,115" castsShadows="true" receiveShadows="true">
+                <TransformGroup name="EnlishLines" clipDistance="200" nodeId="10354">
+                    <Shape shapeId="3" name="roundaboutDualLinesEnglish" static="true" clipDistance="200" nodeId="10355" materialIds="115" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </Shape>
+            <Shape shapeId="2" name="roundaboutDualEntry" rotation="0 90 0" static="true" clipDistance="1200" nodeId="10356" materialIds="115,115" castsShadows="true" receiveShadows="true">
+                <TransformGroup name="EnlishLines" clipDistance="200" nodeId="10357">
+                    <Shape shapeId="3" name="roundaboutDualLinesEnglish" static="true" clipDistance="200" nodeId="10358" materialIds="115" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </Shape>
+            <Shape shapeId="2" name="roundaboutDualEntry" rotation="180 -90 180" static="true" clipDistance="1200" nodeId="10359" materialIds="115,115" castsShadows="true" receiveShadows="true">
+                <TransformGroup name="EnlishLines" clipDistance="200" nodeId="10360">
+                    <Shape shapeId="3" name="roundaboutDualLinesEnglish" static="true" clipDistance="200" nodeId="10361" materialIds="115" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </Shape>
+            <Shape shapeId="4" name="roundaboutDual45" rotation="180 -60.5674 180" static="true" clipDistance="1200" nodeId="10362" materialIds="115,115" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="4" name="roundaboutDual45" translation="-2.52231e-08 0 1.46035e-08" rotation="0.000528126 64.2099 1.91679e-07" static="true" clipDistance="1200" nodeId="10363" materialIds="115,115" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="4" name="roundaboutDual45" rotation="0 -9.34192 5.03957e-08" static="true" clipDistance="1200" nodeId="10364" materialIds="115,115" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

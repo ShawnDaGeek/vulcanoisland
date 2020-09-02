@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="$data/maps/textures/american/props/roadSignsUS_diffuse.dds"/>
+        <File fileId="3" filename="$data/maps/textures/american/props/roadSignsUS_normal.dds"/>
+        <File fileId="4" filename="$data/maps/textures/american/props/roadSignsUS_specular.dds"/>
+    </Files>
+    <Materials>
+        <Material name="roadSigns_mat" materialId="489">
+            <Texture fileId="2"/>
+            <Normalmap fileId="3"/>
+            <Glossmap fileId="4"/>
+        </Material>
+        <Material name="lambert1" materialId="131" diffuseColor="0.494118 0.494118 0.494118 1"/>
+    </Materials>
+    <Shapes externalShapesFile="street_sign_speed35.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="signSpeed35" translation="-111.781 0.0969859 529.731" rotation="180 90 180" static="true" clipDistance="129" nodeId="4053">
+            <TransformGroup name="signSpeed35_joint" translation="0 0.05 0" joint="true" breakableJoint="true" jointBreakForce="20" jointBreakTorque="20" rotMinX="0" rotMaxX="0" transMinX="0" transMaxX="0" rotMinY="0" rotMaxY="0" transMinY="0" transMaxY="0" rotMinZ="0" rotMaxZ="0" transMinZ="0" transMaxZ="0" nodeId="4054">
+                <Shape shapeId="1" name="signSpeed35_col" rotation="5.61623e-06 -8.90018e-07 3.54974e-08" dynamic="true" nodeId="4055" materialIds="131" castsShadows="true" receiveShadows="true" nonRenderable="true">
+                    <Shape shapeId="2" name="signSpeed35_vis" clipDistance="129" nodeId="4056" materialIds="489" castsShadows="true" receiveShadows="true"/>
+                </Shape>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+</i3D>

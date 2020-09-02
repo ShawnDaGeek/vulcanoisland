@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="maize" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.0.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/fruitGrowthFoliageShader.xml"/>
+    <File fileId="6" filename="foliage_maizeStraw_diffuse.dds"/>
+    <File fileId="7" filename="maize01LOD_diffuse_H.png"/>
+    <File fileId="8" filename="maize01LOD_normal_H.png"/>
+    <File fileId="9" filename="maize02LOD_diffuse_H.png"/>
+    <File fileId="10" filename="maize02LOD_normal_H.png"/>
+    <File fileId="11" filename="maize03LOD_diffuse_H.png"/>
+    <File fileId="12" filename="maize03LOD_normal_H.png"/>
+    <File fileId="13" filename="maize04LOD_diffuse_H.png"/>
+    <File fileId="14" filename="maize04LOD_normal_H.png"/>
+    <File fileId="15" filename="maize05LOD_diffuse_H.png"/>
+    <File fileId="16" filename="maize05LOD_normal_H.png"/>
+    <File fileId="1" filename="maize_diffuse.png"/>
+    <File fileId="2" filename="shaders/fruitGrowthFoliageShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="maize02LOD_mat" materialId="9" customShaderId="2" customShaderVariation="BILLBOARD">
+      <Texture fileId="9"/>
+      <Normalmap fileId="10"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="default" materialId="7" customShaderId="4">
+      <Texture fileId="6"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0 0 0 0"/>
+      <CustomParameter name="plantRotate" value="0 0 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="maize04LOD_mat" materialId="11" customShaderId="2" customShaderVariation="BILLBOARD">
+      <Texture fileId="13"/>
+      <Normalmap fileId="14"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="maize03LOD_mat" materialId="4" customShaderId="2" customShaderVariation="BILLBOARD">
+      <Texture fileId="11"/>
+      <Normalmap fileId="12"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="maize05LOD_mat" materialId="5" customShaderId="2" customShaderVariation="BILLBOARD">
+      <Texture fileId="15"/>
+      <Normalmap fileId="16"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="maize_mat" materialId="6" customShaderId="2">
+      <Texture fileId="1"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="16 102 2 255"/>
+    </Material>
+    <Material name="maize01LOD_mat" materialId="8" customShaderId="2" customShaderVariation="BILLBOARD">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+    <Material name="default" materialId="50" customShaderId="4">
+      <Texture fileId="1"/>
+      <CustomParameter name="fadeInOutStartEnd" value="-5 0 70 75"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <CustomParameter name="plantRotate" value="0.4363 1.57 0 0"/>
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="0 0 0 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="maize.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="maize" nodeId="25">
+      <Shape shapeId="1" name="maize1" clipDistance="500" nodeId="26" materialIds="6" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="2" name="maize2" clipDistance="500" nodeId="27" materialIds="6" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="3" name="maize3" nodeId="53" materialIds="50" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="4" name="maize4" clipDistance="500" nodeId="29" materialIds="6" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="5" name="maize5" clipDistance="500" nodeId="30" materialIds="6" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="6" name="maize6_cut" nodeId="31" materialIds="7" castsShadows="true" receiveShadows="true"/>
+    </TransformGroup>
+    <TransformGroup name="LOD" nodeId="32">
+      <Shape shapeId="7" name="_01_" clipDistance="500" nodeId="33" materialIds="8" receiveShadows="true"/>
+      <Shape shapeId="8" name="_02_" clipDistance="500" nodeId="34" materialIds="9" receiveShadows="true"/>
+      <Shape shapeId="9" name="_03_" clipDistance="500" nodeId="35" materialIds="4" receiveShadows="true"/>
+      <Shape shapeId="10" name="_04_" clipDistance="500" nodeId="36" materialIds="11" receiveShadows="true"/>
+      <Shape shapeId="11" name="_05_" clipDistance="500" nodeId="37" materialIds="5" receiveShadows="true"/>
+      <Shape shapeId="12" name="_06_" clipDistance="500" nodeId="38" materialIds="11" receiveShadows="true"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

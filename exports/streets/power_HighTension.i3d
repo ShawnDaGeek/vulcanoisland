@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="4" filename="texturen/cable_diffuse.png"/>
+        <File fileId="3" filename="texturen/pylonDetail_diffuse.png"/>
+        <File fileId="1" filename="texturen/pylon_diffuse.png"/>
+    </Files>
+    <Materials>
+        <Material name="pylonCables_mat" materialId="273295" alphaBlending="true">
+            <Texture fileId="4"/>
+        </Material>
+        <Material name="pylon_mat" materialId="273493" specularColor="0.729412 1 1">
+            <Texture fileId="1"/>
+        </Material>
+        <Material name="pylonDetail_mat" materialId="273754">
+            <Texture fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="power_HighTension.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="pylon" translation="513.599 120.569 769.313" rotation="178.873 -8.97323 179.302" scale="1.20439 1.20439 1.20439" static="true" nodeId="318805" materialIds="273493" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="2" name="pylonDetail" nodeId="318806" materialIds="273754" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="pylonCables" translation="-0.0876922 0.00334676 0" rotation="6.4033e-07 -1.70755e-06 -1.56448" nodeId="318807" materialIds="273295" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+    </Scene>
+</i3D>

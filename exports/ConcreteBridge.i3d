@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+        <File fileId="1" filename="textures/southAmerican/buildingsArray_diffuse.png"/>
+        <File fileId="2" filename="textures/southAmerican/buildingsArray_normal.png"/>
+        <File fileId="3" filename="textures/southAmerican/buildingsArray_specular.png"/>
+        <File fileId="5" filename="textures/southAmerican/concreteBridge_specular.png"/>
+        <File fileId="7" filename="textures/terrain/roughDirt01_normal.png"/>
+        <File fileId="6" filename="textures/terrain/roughDirtSA01_diffuse.png"/>
+    </Files>
+    <Materials>
+        <Material name="buildingsArray_mat" materialId="106" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="5"/>
+            <Custommap name="mDirtDiffuse" fileId="6"/>
+            <Custommap name="mDirtNormal" fileId="7"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="ConcreteBridge.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="concreteBridge" translation="388.182 35.948 -1478.77" rotation="0 45 0" scale="1 1.10865 1.06608" static="true" clipDistance="600" nodeId="12330">
+            <Shape shapeId="1" name="concreteBridge" translation="33.3355 0 -0.932" static="true" density="0.0001" clipDistance="600" nodeId="12331" materialIds="106" castsShadows="true" receiveShadows="true"/>
+            <TransformGroup name="concreteBridgeBrokenParts" translation="35.0647 0 0" static="true" clipDistance="600" nodeId="12332">
+                <Shape shapeId="2" name="concreteBridge_brokenPart1" static="true" density="0.0001" clipDistance="300" nodeId="12333" materialIds="106" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="3" name="concreteBridge_brokenPart" static="true" density="0.0001" clipDistance="300" nodeId="12334" materialIds="106" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="4" name="concreteBridge_brokenPart2" static="true" density="0.0001" clipDistance="300" nodeId="12335" materialIds="106" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+</i3D>

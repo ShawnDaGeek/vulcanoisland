@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="10" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="12" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="28" filename="$data/maps/textures/european/props/firewoodStackSet_diffuse.png"/>
+    <File fileId="29" filename="$data/maps/textures/european/props/firewoodStackSet_normal.png"/>
+    <File fileId="30" filename="$data/maps/textures/european/props/firewoodStackSet_specular.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/props/industrialWallLight_diffuse.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/props/industrialWallLight_normal.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/props/industrialWallLight_specular.png"/>
+    <File fileId="26" filename="$data/maps/textures/european/props/lightPoleSet_emissive.png"/>
+    <File fileId="16" filename="$data/maps/textures/shared/triggerIcons_diffuse.png"/>
+    <File fileId="18" filename="$data/maps/textures/shared/warningStripes_diffuse.png"/>
+    <File fileId="19" filename="$data/maps/textures/shared/warningStripes_normal.png"/>
+    <File fileId="20" filename="$data/maps/textures/shared/warningStripes_specular.png"/>
+    <File fileId="14" filename="$data/placeables/workshop/workshop_emissive.png"/>
+    <File fileId="5" filename="$data/placeables/workshop/workshop_specular.png"/>
+    <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="13" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="17" filename="$data/shaders/fxCircleShader.xml"/>
+    <File fileId="11" filename="$data/shared/default_normal.png"/>
+    <File fileId="24" filename="$data/shared/window02_diffuse.png"/>
+    <File fileId="25" filename="$data/shared/window02_specular.png"/>
+    <File fileId="1" filename="animalHusbandry_diffuse.dds"/>
+    <File fileId="2" filename="animalHusbandry_normal.dds"/>
+    <File fileId="3" filename="animalHusbandry_specular.dds"/>
+    <File fileId="31" filename="snow_diffuse.dds"/>
+    <File fileId="32" filename="snow_normal.dds"/>
+    <File fileId="33" filename="snow_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert1" materialId="8" diffuseColor="0.486275 0.486275 0.494118 1">
+    </Material>
+    <Material name="window02_mat" materialId="4" alphaBlending="true" customShaderId="13">
+      <Texture fileId="24"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="25"/>
+      <Custommap name="mEmissiveMap" fileId="26"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+    <Material name="lambert1" materialId="5" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="animalHusbandry_mat" materialId="6" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mMaskMap" fileId="5"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="7">
+      <Texture fileId="18"/>
+      <Normalmap fileId="19"/>
+      <Glossmap fileId="20"/>
+    </Material>
+    <Material name="triggerIcons_mat" materialId="10" alphaBlending="true" customShaderId="17" customShaderVariation="PULSATING">
+      <Emissivemap fileId="16"/>
+      <CustomParameter name="scaleParameters" value="0.75 1 2.5 1"/>
+    </Material>
+    <Material name="industrialWallLight_mat" materialId="11">
+      <Texture fileId="21"/>
+      <Normalmap fileId="22"/>
+      <Glossmap fileId="23"/>
+    </Material>
+    <Material name="firewoodStackSet_mat" materialId="9">
+      <Texture fileId="28"/>
+      <Normalmap fileId="29"/>
+      <Glossmap fileId="30"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="12" customShaderId="13">
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="12"/>
+      <Custommap name="mEmissiveMap" fileId="14"/>
+      <CustomParameter name="lightControl" value="1 0 2 50"/>
+    </Material>
+    <Material name="pasted__lambert2" materialId="65">
+      <Texture fileId="31"/>
+      <Normalmap fileId="32"/>
+      <Glossmap fileId="33"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="sellingStationWoodLite.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="carpentrySmall" nodeId="29">
+      <Shape shapeId="1" name="vis" translation="-3.233 0 0" static="true" clipDistance="300" nodeId="30" materialIds="6" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="illum" translation="0 -0.164102 0" nodeId="31">
+          <Shape shapeId="2" name="windows" static="true" clipDistance="150" nodeId="32" materialIds="12" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="realLights" translation="0 0.164102 0" visibility="false" nodeId="33">
+            <Light name="pointLight1" translation="1.579 1.92771 -0.876675" clipDistance="150" nodeId="34" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight2" translation="-0.887936 1.92771 4.92391" clipDistance="150" nodeId="35" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight3" translation="-3.50806 1.92771 -0.391426" clipDistance="150" nodeId="36" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="3" name="tipBlocker" translation="-3.94943 0 0" static="true" collisionMask="524288" nodeId="37" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <TransformGroup name="areas" nodeId="38">
+        <TransformGroup name="start" translation="-8 0 -10" nodeId="39">
+          <TransformGroup name="width" translation="0 0 20" nodeId="40"/>
+          <TransformGroup name="height" translation="19 0 0" nodeId="41"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="sellingStationWood" translation="4.5 0 -3.3861e-07" rotation="-0 90 0" nodeId="42">
+        <Shape shapeId="4" name="woodSellTrigger" translation="0 1.65 0" static="true" trigger="true" collisionMask="16777216" nodeId="43" materialIds="5" nonRenderable="true" distanceBlending="false"/>
+        <Shape shapeId="5" name="woodSellStartTrigger" translation="6.57971 0 -5.81805" static="true" trigger="true" collisionMask="3145728" clipDistance="300" nodeId="44" materialIds="5" castsShadows="true" receiveShadows="true" nonRenderable="true">
+          <Shape shapeId="6" name="triggerIconInteraction" translation="0 1 0" clipDistance="300" nodeId="45" materialIds="10" castsShadows="true" receiveShadows="true">
+            <Light name="light" nodeId="46" type="point" color="0.75 0.5 0" emitDiffuse="true" emitSpecular="true" decayRate="4" range="3"/>
+          </Shape>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="warningStripesWoodSelling" translation="4.5 0 0" rotation="-0 90 0" nodeId="47">
+        <Shape shapeId="7" name="warningStripesCorner2" translation="-7.46002 0 4.98102" rotation="-180 0 -180" clipDistance="200" nodeId="48" materialIds="7" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="8" name="warningStripesCorner1" translation="-7.4469 0 -4.9538" clipDistance="200" nodeId="49" materialIds="7" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="7" name="warningStripesCorner2" translation="7.47565 0 -4.97382" clipDistance="200" nodeId="50" materialIds="7" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="8" name="warningStripesCorner1" translation="7.45319 0 4.96588" rotation="-180 -5.00896e-06 -180" clipDistance="200" nodeId="51" materialIds="7" receiveShadows="true" decalLayer="1"/>
+      </TransformGroup>
+      <TransformGroup name="props" nodeId="52">
+        <TransformGroup name="lights" translation="-1.77504 3.174 1.65973" nodeId="53">
+          <Shape shapeId="9" name="industrialWallLight" translation="0 0 0.134766" rotation="90 -0 90" clipDistance="110" nodeId="54" materialIds="11" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="55">
+              <Shape shapeId="10" name="glass" clipDistance="120" nodeId="56" materialIds="4" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="57" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            </TransformGroup>
+            <Shape shapeId="11" name="col" visibility="false" static="true" density="0.0001" nodeId="58" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+        <Shape shapeId="12" name="firewoodstackMedium" translation="-4.03016 1.044 -3.01443" rotation="180 -0 180" clipDistance="150" nodeId="59" materialIds="9" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="13" name="col" translation="-0.0197684 0.00643288 -0.00599777" visibility="false" static="true" density="0.0001" nodeId="60" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </Shape>
+        <Shape shapeId="14" name="firewoodstackSmall" translation="-2.84146 0.985 5.13705" rotation="-6.59357e-09 0.8 -4.00007e-13" clipDistance="150" nodeId="61" materialIds="9" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="15" name="col" translation="0.011421 7.62939e-08 -0.00194099" visibility="false" static="true" density="0.0001" nodeId="62" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="seasons" nodeId="71">
+        <Shape shapeId="16" name="snow" translation="-4.13309 3.75007 0.151595" rotation="0 -0 8.1" scale="2.53539 1 3.38818" static="true" nodeId="70" materialIds="65" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="16" name="snow" translation="-1.64629 3.6073 3.10879" rotation="0 -0 -14.4775" static="true" nodeId="73" materialIds="65" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="16" name="snow" translation="-1.64604 3.60826 1.17465" rotation="0 -0 -14.4775" static="true" nodeId="74" materialIds="65" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="16" name="snow" translation="-1.64629 3.607 -0.533901" rotation="0 -0 -14.4775" static="true" nodeId="75" materialIds="65" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="55">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="71">
+      <Attribute name="onCreate" type="scriptCallback" value="modo"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

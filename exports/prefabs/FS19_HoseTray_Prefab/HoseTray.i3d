@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Bracket.blend" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+    <File fileId="3" filename="$data/shared/default_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="Holder" materialId="5" diffuseColor="0.164706 0.156863 0.129412 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.275 0.278 0.243 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="Arms" materialId="6" diffuseColor="0.8 0.8 0.8 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.275 0.278 0.243 1"/>
+      <CustomParameter name="colorMat1" value="0.753 0.753 0.753 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="Bracket" materialId="4" diffuseColor="0.376471 0.494118 0.4 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.416 0.424 0.431 7"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="HoseTray.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="hoseTray" clipDistance="300" nodeId="12">
+      <Shape shapeId="1" name="LeftBrackets" translation="-0.104753 0.3087 -0.076894" rotation="90 -0 0" scale="1 0.6875 1" clipDistance="300" nodeId="13" materialIds="4"/>
+      <Shape shapeId="1" name="RightBrackets" translation="0.104753 0.3087 -0.076894" rotation="90 -0 0" scale="1 0.6875 1" clipDistance="300" nodeId="14" materialIds="4"/>
+      <Shape shapeId="2" name="Holder" translation="0 0.250055 -2.75377" scale="0.125 0.05 2.85" clipDistance="300" nodeId="15" materialIds="5"/>
+      <Shape shapeId="3" name="LeftArms" translation="-0.104753 0.3087 -0.076894" clipDistance="300" nodeId="16" materialIds="6"/>
+      <Shape shapeId="4" name="RightArms" translation="0.107058 0.30482 -0.076894" scale="1.025 1.025 1.025" clipDistance="300" nodeId="17" materialIds="6"/>
+      <TransformGroup name="attachers" nodeId="18">
+        <TransformGroup name="connectorLeft" translation="0 0.295 0" rotation="0 180 0" nodeId="19"/>
+        <TransformGroup name="connectorRight" translation="0 0.295 -5.52461" nodeId="20"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

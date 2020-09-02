@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>Perma's Modding</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Hose Tray</en>
+        <de>Schlauchwanne</de>
+        <fr>Plateau de Tuyau</fr>
+    </title>
+    <description>
+        <en>
+            <![CDATA[This is a prefab of a hose tray that can be used to transport a fertilizer hose from the Manure System mod]]>
+        </en>
+        <de>
+            <![CDATA[Dies ist das Prefab einer Schlauchwanne, welches für einen Gülleschlauch aus dem Manure System Mod verwendet werden kann]]>
+        </de>
+        <fr>
+            <![CDATA[Ceci est un préfabriqué d'un plateau de tuyau qui peut être utilisé pour transporter un tuyau d'engrais du mod du système de fumier]]>
+        </fr>
+    </description>
+    <categories>
+        <category>others</category>
+    </categories>
+    <prefabs>
+        <prefab name="Hose Tray" i3dFilename="HoseTray.i3d" />
+    </prefabs>
+</prefabDesc>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<map>
+    <densityMapHeightTypes>
+        <densityMapHeightType fillTypeName="compost" maxSurfaceAngle="30" fillToGroundScale="1.0" allowsSmoothing="false" >
+            <collision scale="1.00" baseOffset="0.08" minOffset="0.0" maxOffset="0.08" />
+            <textures diffuse="maps/newFruits/fillPlanes/compost_diffuse.png" normal="maps/newFruits/fillPlanes/compost_normal.png" distance="maps/newFruits/fillPlanes/distance/compostDistance_diffuse.png" />
+        </densityMapHeightType>
+    </densityMapHeightTypes>
+</map>

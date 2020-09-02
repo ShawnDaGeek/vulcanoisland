@@ -1,0 +1,10 @@
+by reallogger
+
+
+To paint mud in GE
+
+Paint infoLayer mud
+
+- channel 0: no mud
+- channel 1: always mud
+- channel 2: dynamic mud depending on ground wetness

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="13" filename="$data/maps/textures/european/props/lightPoleSetGlass_specular.png"/>
+    <File fileId="12" filename="$data/maps/textures/european/props/lightPoleSet_emissive.dds"/>
+    <File fileId="9" filename="$data/maps/textures/european/props/neonLightSmall_diffuse.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/props/neonLightSmall_normal.png"/>
+    <File fileId="11" filename="$data/maps/textures/european/props/neonLightSmall_specular.png"/>
+    <File fileId="1" filename="$data/placeables/sheds/easySheds01_diffuse.png"/>
+    <File fileId="2" filename="$data/placeables/sheds/easySheds01_normal.png"/>
+    <File fileId="3" filename="$data/placeables/sheds/easySheds01_specular.png"/>
+    <File fileId="4" filename="$data/placeables/sheds/easyShedsLogo_diffuse.png"/>
+    <File fileId="14" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="7" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="5" filename="$data/shared/default_normal.png"/>
+    <File fileId="6" filename="$data/shared/default_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="easySheds01_mat" materialId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="lambert1" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="easyShedsLogo_mat" materialId="7" alphaBlending="true" customShaderId="7">
+      <Texture fileId="4"/>
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="neonLightSmall_mat" materialId="8">
+      <Texture fileId="9"/>
+      <Normalmap fileId="10"/>
+      <Glossmap fileId="11"/>
+    </Material>
+    <Material name="lightPoleSetGlass_mat" materialId="5" alphaBlending="true" customShaderId="14">
+      <Texture fileId="12"/>
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="13"/>
+      <Custommap name="mEmissiveMap" fileId="12"/>
+      <CustomParameter name="lightControl" value="1 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="easyShedSet.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="easyShedSet" nodeId="21">
+      <Shape shapeId="1" name="modularHalls01" static="true" clipDistance="300" nodeId="22" materialIds="4" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="decalEasySheds" clipDistance="120" nodeId="23" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <TransformGroup name="areaDefinitions" nodeId="24">
+          <TransformGroup name="start" translation="-9 0 -9" nodeId="25">
+            <TransformGroup name="width" translation="18 0 0" nodeId="26"/>
+            <TransformGroup name="height" translation="0 0 18" nodeId="27"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="3" name="tipCol01" visibility="false" static="true" collisionMask="524288" nodeId="28" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="lights" nodeId="29">
+          <Shape shapeId="4" name="neonLightSmall" translation="-3.75 6.738 2.578" rotation="9 -0 0" clipDistance="100" nodeId="30" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="31">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="32" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="33" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="34" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="3.75 6.738 2.57759" rotation="9 -0 0" clipDistance="100" nodeId="35" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="36">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="37" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="38" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="39" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="7" name="modularHalls01" static="true" clipDistance="300" nodeId="40" materialIds="4" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="decalEasySheds" clipDistance="120" nodeId="41" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <TransformGroup name="areaDefinitions" nodeId="42">
+          <TransformGroup name="start" translation="-9 0 -9" nodeId="43">
+            <TransformGroup name="width" translation="18 0 0" nodeId="44"/>
+            <TransformGroup name="height" translation="0 0 18" nodeId="45"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="8" name="tipCol01" visibility="false" static="true" collisionMask="524288" clipDistance="250" nodeId="46" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="lights" nodeId="47">
+          <Shape shapeId="4" name="neonLightSmall" translation="-3.75 6.738 2.578" rotation="9 -0 0" clipDistance="100" nodeId="48" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="49">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="50" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="51" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="52" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="3.75 6.738 2.57759" rotation="9 -0 0" clipDistance="100" nodeId="53" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="54">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="55" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="56" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="57" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="9" name="modularHalls03" static="true" clipDistance="300" nodeId="58" materialIds="4" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="10" name="decalEasySheds" clipDistance="120" nodeId="59" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <TransformGroup name="areaDefinitions" nodeId="60">
+          <TransformGroup name="start" translation="-11 0 -13" nodeId="61">
+            <TransformGroup name="width" translation="22 0 0" nodeId="62"/>
+            <TransformGroup name="height" translation="0 0 26" nodeId="63"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="11" name="tipCol01" visibility="false" static="true" collisionMask="524288" clipDistance="250" nodeId="64" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="lights" nodeId="65">
+          <Shape shapeId="4" name="neonLightSmall" translation="-4.8375 6.7635 -8.438" rotation="-8.99999 90 0" clipDistance="100" nodeId="66" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="67">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="68" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="69" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="70" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="-4.8375 6.7635 -2.8125" rotation="-8.99999 90 0" clipDistance="100" nodeId="71" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="72">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="73" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="74" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="75" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="-4.8375 6.7635 2.8125" rotation="-8.99999 90 0" clipDistance="100" nodeId="76" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="77">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="78" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="79" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="80" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="-4.8375 6.7635 8.4375" rotation="-8.99999 90 0" clipDistance="100" nodeId="81" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="82">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="83" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 0" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="84" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="85" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="4.8375 6.7635 -8.4375" rotation="9 90 0" clipDistance="100" nodeId="86" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="87">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="88" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="89" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="90" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="4.8375 6.7635 -2.8125" rotation="9 90 0" clipDistance="100" nodeId="91" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="92">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="93" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="94" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="95" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="4.8375 6.7635 2.8125" rotation="9 90 0" clipDistance="100" nodeId="96" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="97">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="98" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="99" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="100" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="4" name="neonLightSmall" translation="4.8375 6.7635 8.4375" rotation="9 90 0" clipDistance="100" nodeId="101" materialIds="8" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.005 0 0" nodeId="102">
+              <Shape shapeId="5" name="glass" translation="0.005 0 0" clipDistance="100" nodeId="103" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight" translation="0 -0.062 -5.2363e-07" rotation="-99 -0 0" visibility="false" clipDistance="100" nodeId="104" type="point" color="0.5 0.5 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="col" translation="-0.005 0 0" visibility="false" static="true" density="0.0001" nodeId="105" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+      </Shape>
+    </TransformGroup>
+    <Camera name="persp" translation="8.41884 15.1032 31.0419" rotation="-26.9365 22.0817 1.07971e-07" visibility="false" nodeId="106" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="31">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="36">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="49">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="54">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="67">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="72">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="77">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="82">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="87">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="92">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="97">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="102">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="Sample Mod Map 1" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="$data/maps/textures/american/water_normal.dds"/>
+        <File fileId="3" filename="$data/shaders/oceanShader.xml"/>
+    </Files>
+    <Materials>
+        <Material name="water_mat" materialId="2045" diffuseColor="1 1 1 1" specularColor="1 1 1" customShaderId="3">
+            <Normalmap fileId="2"/>
+            <Reflectionmap lodDistanceScaling="0.5" viewDistanceScaling="0.5" type="planar" scaling="1" refractiveIndex="1.03" bumpScale="0.1" shapesObjectMask="256" lightsObjectMask="16777216"/>
+            <Refractionmap coeff="1" bumpScale="0.1"/>
+            <CustomParameter name="bumpSpeedScale" value="-1 -3.75 0.02 1"/>
+            <CustomParameter name="underwaterFogColor" value="0.05 0.103 0.13 1"/>
+            <CustomParameter name="windScale" value="0.25 0 0 0"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="waterPlainMain.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="waterPlaneMain" translation="0 76.602 0" clipDistance="1500" nodeId="88486" materialIds="2045" receiveShadows="true"/>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="88486">
+            <Attribute name="isMainWater" type="boolean" value="true"/>
+            <Attribute name="onCreate" type="scriptCallback" value="Environment.onCreateWater"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

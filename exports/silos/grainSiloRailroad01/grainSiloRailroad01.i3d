@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="3" filename="$data/maps/textures/shared/trainUnloadingPit_diffuse.dds"/>
+    <File fileId="4" filename="$data/maps/textures/shared/trainUnloadingPit_normal.dds"/>
+    <File fileId="5" filename="$data/maps/textures/shared/trainUnloadingPit_specular.dds"/>
+    <File fileId="6" filename="$data/maps/textures/shared/wheatBottom_diffuse.dds"/>
+    <File fileId="7" filename="$data/maps/textures/shared/wheatBottom_normal.dds"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dischargeEffect_mat" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="2"/>
+    </Material>
+    <Material name="lambert1" materialId="4" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="trainUnloadingPit_mat" materialId="5">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+    </Material>
+    <Material name="wheatBottom_mat" materialId="7">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="grainSiloRailroad01.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="grainSiloRailroad01" nodeId="19">
+      <TransformGroup name="gameplay" nodeId="20">
+        <TransformGroup name="IN" nodeId="21">
+          <TransformGroup name="unloadingStationTrain" nodeId="22">
+            <TransformGroup name="unloadingTriggers" nodeId="23">
+              <Shape shapeId="1" name="exactFillRootNode" translation="0 -0.665 -25" static="true" collisionMask="1073741824" nodeId="24" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="2" name="baleTrigger" translation="0 -0.665 -25" static="true" trigger="true" collisionMask="16781312" nodeId="25" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="unloadingStationTrailer" nodeId="26">
+            <TransformGroup name="unloadingTriggers" nodeId="27">
+              <Shape shapeId="3" name="exactFillRootNode" translation="5 1.05 1.4" static="true" collisionMask="1073741824" nodeId="28" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="4" name="baleTrigger" translation="5 1.05 1.4" static="true" trigger="true" collisionMask="16781312" nodeId="29" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="OUT" nodeId="30">
+          <TransformGroup name="loadingStationTrailer" nodeId="31">
+            <TransformGroup name="loadingTriggers" nodeId="32">
+              <Shape shapeId="5" name="loadingTrigger" translation="5 2 17.4001" static="true" trigger="true" collisionMask="1073741824" nodeId="33" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <TransformGroup name="dischargeNode" translation="5 4.8 17.4" nodeId="34"/>
+              <TransformGroup name="dischargeEffect" translation="5 4.5 17.4" nodeId="35">
+                <Shape shapeId="6" name="grain" clipDistance="100" nodeId="36" materialIds="6" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="7" name="smoke" translation="0 -0.6 0" clipDistance="100" nodeId="37" materialIds="6" castsShadows="true" receiveShadows="true"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="loadingStationTrain" nodeId="38">
+            <TransformGroup name="loadingTriggers" nodeId="39">
+              <Shape shapeId="8" name="loadingTrigger" translation="0.015 3.5 -25.075" static="true" trigger="true" collisionMask="1073741824" nodeId="40" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <TransformGroup name="dischargeNode" translation="0.015 7.7 -25.075" nodeId="41"/>
+              <TransformGroup name="dischargeEffect" translation="0.015 7.7 -25.075" nodeId="42">
+                <Shape shapeId="6" name="grain" clipDistance="100" nodeId="43" materialIds="6" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="7" name="smoke" translation="0 -4.4 0" clipDistance="100" nodeId="44" materialIds="6" castsShadows="true" receiveShadows="true"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="storageGrainSiloRailroad01" nodeId="45"/>
+        <TransformGroup name="mapPosition" translation="-5 0 10" nodeId="46"/>
+      </TransformGroup>
+      <Shape shapeId="9" name="trainUnloadingPit" translation="0.0069101 -0.8 -25.045" rotation="-8.53774e-07 1.19528e-05 0" static="true" clipDistance="400" nodeId="47" materialIds="5" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="10" name="trainUnloadingPitGrain" static="true" clipDistance="100" nodeId="48" materialIds="7" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="19">
+      <Attribute name="mapPositionIndex" type="string" value="0|3"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

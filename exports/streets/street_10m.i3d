@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="textures/FS17/Roads/road.dds"/>
+        <File fileId="1" filename="textures/FS17/Roads/verge.dds"/>
+    </Files>
+    <Materials>
+        <Material name="verge_diffuse" materialId="382">
+            <Texture fileId="1"/>
+        </Material>
+        <Material name="road_diffuse" materialId="482">
+            <Texture fileId="2"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="street_10m.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="Street10m" translation="-293.461 9.06034e-06 244.034" rotation="180 0 180" scale="1 1 1.07" static="true" clipDistance="500" nodeId="3901" materialIds="382,482" receiveShadows="true"/>
+    </Scene>
+</i3D>

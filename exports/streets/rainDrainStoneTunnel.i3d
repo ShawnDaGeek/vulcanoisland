@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="3" filename="textures/greenRiver/asphalt_diffuse.dds"/>
+        <File fileId="2" filename="textures/greenRiver/bridgeBrickWall_diffuse.dds"/>
+        <File fileId="1" filename="textures/greenRiver/bridgeDetails_diffuse.dds"/>
+    </Files>
+    <Materials>
+        <Material name="Beton_1Material" materialId="58286">
+            <Texture fileId="3"/>
+        </Material>
+        <Material name="bridgeDetails_mat" materialId="58423">
+            <Texture fileId="1"/>
+        </Material>
+        <Material name="bridgeBrickWall_mat" materialId="58239">
+            <Texture fileId="2"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="rainDrainStoneTunnel.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <Shape shapeId="1" name="railroadTunnel" translation="-436.776 89.9018 955.346" static="true" collision="false" clipDistance="500" nodeId="80778" materialIds="58423" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="2" name="railroadTunnelBrickWall" static="true" collision="false" nodeId="80779" materialIds="58239" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="railroadTunnelRoof" static="true" collision="false" clipDistance="500" nodeId="80780" materialIds="58286" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+    </Scene>
+</i3D>

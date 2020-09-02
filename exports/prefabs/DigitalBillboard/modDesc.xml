@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="44">
+    <author>ShawnDaGeek</author>
+    <version>1.0.0.1</version>
+    <title>
+        <en>Digital Billboard</en>
+    </title>
+    <description>
+    </description>
+    <multiplayer supported="true"/>
+<filename>maps/prefabs/DigitalBillboard/DigitalBillboardTest.i3d</filename>
+</modDesc>

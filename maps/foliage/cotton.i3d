@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="cotton" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+    <File fileId="1" filename="cotton_diffuse.png" relativePath="true"/>
+    <File fileId="2" filename="cotton_normal.png" relativePath="true"/>
+    <File fileId="5" filename="cotton01LOD_normal_H.png" relativePath="true"/>
+    <File fileId="4" filename="cotton01LOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="7" filename="cotton02LOD_normal_H.png" relativePath="true"/>
+    <File fileId="6" filename="cotton02LOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="9" filename="cotton03LOD_normal_H.png" relativePath="true"/>
+    <File fileId="8" filename="cotton03LOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="10" filename="cotton04LOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="11" filename="cotton04LOD_normal_H.png" relativePath="true"/>
+    <File fileId="12" filename="cotton05LOD_diffuse_H.png" relativePath="true"/>
+    <File fileId="13" filename="cotton05LOD_normal_H.png" relativePath="true"/>
+    <File fileId="3" filename="$data/shaders/fruitGrowthFoliageShader.xml" relativePath="true"/>
+  </Files>
+
+  <Materials>
+    <Material name="cotton_mat" materialId="1" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3">
+      <CustomParameter name="cellSizeTerrainSizeScaleXZScaleY" value="16 1024 2 255"/>
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+    </Material>
+    <Material name="cotton01LOD_mat" materialId="2" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="4"/>
+      <Normalmap fileId="5"/>
+    </Material>
+    <Material name="cotton02LOD_mat" materialId="3" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+    </Material>
+    <Material name="cotton03LOD_mat" materialId="4" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="8"/>
+      <Normalmap fileId="9"/>
+    </Material>
+    <Material name="cotton04LOD_mat" materialId="5" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+    </Material>
+    <Material name="cotton05LOD_mat" materialId="6" cosPower="100" specularColor="0 1 0" ambientColor="1 1 1" customShaderId="3" customShaderVariation="BILLBOARD">
+      <CustomParameter name="frequencyAndScale" value="0.05 0.02 0 0"/>
+      <Texture fileId="12"/>
+      <Normalmap fileId="13"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="cotton.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="greenSmall" nodeId="1">
+      <TransformGroup name="LOD0" nodeId="2">
+        <Shape name="shape0" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="3"/>
+        <Shape name="shape1" shapeId="2" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="4"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="5">
+        <Shape name="_01_01" shapeId="3" castsShadows="false" receiveShadows="true" materialIds="2" clipDistance="500" nodeId="6"/>
+        <Shape name="_01_02" shapeId="4" castsShadows="false" receiveShadows="true" materialIds="2" clipDistance="500" nodeId="7"/>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="greenMiddle" nodeId="8">
+      <TransformGroup name="LOD0" nodeId="9">
+        <Shape name="shape0" shapeId="5" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="10"/>
+        <Shape name="shape1" shapeId="6" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="11"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="12">
+        <Shape name="_02_01" shapeId="7" castsShadows="false" receiveShadows="true" materialIds="3" clipDistance="500" nodeId="13"/>
+        <Shape name="_02_02" shapeId="8" castsShadows="false" receiveShadows="true" materialIds="3" clipDistance="500" nodeId="14"/>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="greenBig" nodeId="15">
+      <TransformGroup name="LOD0" nodeId="16">
+        <Shape name="shape0" shapeId="9" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="17"/>
+        <Shape name="shape1" shapeId="10" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="18"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="19">
+        <Shape name="_03_01" shapeId="11" castsShadows="false" receiveShadows="true" materialIds="4" clipDistance="500" nodeId="20"/>
+        <Shape name="_03_02" shapeId="12" castsShadows="false" receiveShadows="true" materialIds="4" clipDistance="500" nodeId="21"/>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="harvestReady" nodeId="22">
+      <TransformGroup name="LOD0" nodeId="23">
+        <Shape name="shape0" shapeId="13" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="24"/>
+        <Shape name="shape1" shapeId="14" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="25"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="26">
+        <Shape name="_04_01" shapeId="15" castsShadows="false" receiveShadows="true" materialIds="5" clipDistance="500" nodeId="27"/>
+        <Shape name="_04_02" shapeId="16" castsShadows="false" receiveShadows="true" materialIds="5" clipDistance="500" nodeId="28"/>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="dead" nodeId="29">
+      <TransformGroup name="LOD0" nodeId="30">
+        <Shape name="shape0" shapeId="17" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="31"/>
+        <Shape name="shape1" shapeId="18" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="32"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="33">
+        <Shape name="_05_01" shapeId="19" castsShadows="false" receiveShadows="true" materialIds="6" clipDistance="500" nodeId="34"/>
+        <Shape name="_05_02" shapeId="20" castsShadows="false" receiveShadows="true" materialIds="6" clipDistance="500" nodeId="35"/>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="cut" nodeId="36">
+      <TransformGroup name="LOD0" nodeId="37">
+        <Shape name="shape0" shapeId="21" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="38"/>
+        <Shape name="shape1" shapeId="22" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="500" nodeId="39"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="40">
+        <Shape name="_06_01" shapeId="23" castsShadows="false" receiveShadows="true" materialIds="5" clipDistance="500" nodeId="41"/>
+        <Shape name="_06_02" shapeId="24" castsShadows="false" receiveShadows="true" materialIds="5" clipDistance="500" nodeId="42"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>

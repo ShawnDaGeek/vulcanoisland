@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<prefabDesc descVersion="1">
+    <author>ItsJustin</author>
+    <version>1.0.0.0</version>
+	<title>
+		<en>Meadow Sound</en>
+	</title>
+	<description>
+        <en><![CDATA[This is a prefab used for Mapping.]]></en>
+		<de><![CDATA[Dies ist ein Prefab für Mapping.]]></de>
+    </description>
+	<iconFilename>icon_prefab_sound.dds</iconFilename>
+	<categories>
+        <category>Other</category>
+        <category>Static</category>
+    </categories>
+	<prefabs>
+		<prefab name="Meadow Prefab" i3dFilename="meadow.i3d" />
+    </prefabs>
+</prefabDesc>

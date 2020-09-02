@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+        <File fileId="14" filename="$data/shaders/emissiveLightsShader.xml"/>
+        <File fileId="11" filename="$data/shared/default_normal.png"/>
+        <File fileId="15" filename="$data/shared/genericChain_diffuse.png"/>
+        <File fileId="16" filename="$data/shared/genericChain_normal.png"/>
+        <File fileId="17" filename="$data/shared/genericChain_specular.png"/>
+        <File fileId="26" filename="$data/shared/mapDirt03_diffuse.png"/>
+        <File fileId="10" filename="$data/shared/window02_diffuse.png"/>
+        <File fileId="12" filename="$data/shared/window02_specular.png"/>
+        <File fileId="1" filename="textures/southAmerican/buildingsArray_diffuse.png"/>
+        <File fileId="2" filename="textures/southAmerican/buildingsArray_normal.png"/>
+        <File fileId="3" filename="textures/southAmerican/buildingsArray_specular.png"/>
+        <File fileId="5" filename="textures/southAmerican/portAssets01_specular.png"/>
+        <File fileId="25" filename="textures/southAmerican/portAssets02_specular.png"/>
+        <File fileId="18" filename="textures/southAmerican/puddle_01_diffuse.png"/>
+        <File fileId="19" filename="textures/southAmerican/puddle_01_normal.png"/>
+        <File fileId="20" filename="textures/southAmerican/puddle_01_specular.png"/>
+        <File fileId="21" filename="textures/southAmerican/trash_01_diffuse.png"/>
+        <File fileId="22" filename="textures/southAmerican/trash_01_normal.png"/>
+        <File fileId="23" filename="textures/southAmerican/trash_01_specular.png"/>
+        <File fileId="7" filename="textures/terrain/roughDirt01_normal.png"/>
+        <File fileId="6" filename="textures/terrain/roughDirtSA01_diffuse.png"/>
+    </Files>
+    <Materials>
+        <Material name="puddle_01_mat" materialId="62" alphaBlending="true">
+            <Texture fileId="18"/>
+            <Normalmap fileId="19"/>
+            <Glossmap fileId="20"/>
+        </Material>
+        <Material name="trash_01_mat" materialId="159" alphaBlending="true">
+            <Texture fileId="21"/>
+            <Normalmap fileId="22"/>
+            <Glossmap fileId="23"/>
+        </Material>
+        <Material name="staticLight_mat" materialId="280" emissiveColor="1 1 1 1" alphaBlending="true" customShaderId="14" customShaderVariation="STATIC_LIGHT">
+            <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+        </Material>
+        <Material name="buildingsArray_mat" materialId="176" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="5"/>
+            <Custommap name="mDirtDiffuse" fileId="6"/>
+            <Custommap name="mDirtNormal" fileId="7"/>
+        </Material>
+        <Material name="window02_mat" materialId="210" alphaBlending="true">
+            <Texture fileId="10"/>
+            <Normalmap fileId="11"/>
+            <Glossmap fileId="12"/>
+        </Material>
+        <Material name="buildingsArray_mat2" materialId="213" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+            <Custommap name="mMaskMap" fileId="25"/>
+            <Custommap name="mDirtDiffuse" fileId="6"/>
+            <Custommap name="mDirtNormal" fileId="7"/>
+            <Custommap name="mMossDiffuse" fileId="26"/>
+        </Material>
+        <Material name="genericChain_mat" materialId="214">
+            <Texture fileId="15"/>
+            <Normalmap fileId="16"/>
+            <Glossmap fileId="17"/>
+        </Material>
+        <Material name="lambert1" materialId="318" diffuseColor="0.494118 0.494118 0.494118 1"/>
+    </Materials>
+    <Shapes externalShapesFile="water_pierSmall.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="pier" translation="503.283 72.034 903.514" static="true" clipDistance="600" objectMask="16712703" nodeId="15004">
+            <Shape shapeId="1" name="pier" translation="-0.000525167 5.9595 14.6213" static="true" nodeId="15005" materialIds="176" castsShadows="true" receiveShadows="true"/>
+            <TransformGroup name="house01" translation="70.3773 11.9208 1.45795" clipDistance="1200" nodeId="15006" lodDistance="0 150">
+                <TransformGroup name="lod0" nodeId="15007">
+                    <Shape shapeId="2" name="house01" translation="1.53979e-05 0.00195435 2.86696e-07" nodeId="15008" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="3" name="house01_base" translation="-9.96448 1.7953e-08 -11.943" static="true" nodeId="15009" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="4" name="house04" translation="-119.519 0.00195435 2.86696e-07" nodeId="15010" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="3" name="house01_base1" translation="-129.484 1.7953e-08 -11.943" static="true" nodeId="15011" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="lod1" translation="8.17253 0.0864685 -10.1511" nodeId="15012">
+                    <Shape shapeId="5" name="houseLOD" translation="-8.1725 -0.0845142 10.1511" static="true" nodeId="15013" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="6" name="houseLOD4" translation="-119.519 0 1.98952e-15" static="true" nodeId="15014" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="house02" translation="30.384 11.9368 0.978613" clipDistance="1200" nodeId="15015" lodDistance="0 150">
+                <TransformGroup name="lod0" nodeId="15016">
+                    <Shape shapeId="7" name="house_02" translation="1.509e-05 -0.0160425 -9.76563e-06" nodeId="15017" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="8" name="house02_base" translation="9.77415 -0.0160425 -11.435" static="true" nodeId="15018" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="9" name="house02_base7" translation="-19.3456 -0.0160425 -11.435" static="true" nodeId="15019" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="10" name="house_05" translation="-29.1197 -0.0160425 -9.76563e-06" nodeId="15020" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="8" name="house02_base6" translation="-101.035 -0.0160425 -11.435" static="true" nodeId="15021" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="11" name="house_04" translation="-110.809 -0.0160425 -9.76563e-06" nodeId="15022" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="12" name="house_03" translation="-136.926 -0.0160425 -9.76563e-06" nodeId="15023" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="8" name="house02_base3" translation="-127.152 -0.0160425 -11.435" static="true" nodeId="15024" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="lod1" translation="8.00002 5.11954 -10" nodeId="15025">
+                    <Shape shapeId="13" name="houseLOD" translation="0 0 -1.13687e-15" static="true" nodeId="15026" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="14" name="houseLOD1" translation="-29.1197 0 -1.13687e-15" static="true" nodeId="15027" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="15" name="houseLOD2" translation="-110.809 0 -1.13687e-15" static="true" nodeId="15028" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="16" name="houseLOD3" translation="-136.926 0 -1.13687e-15" static="true" nodeId="15029" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="fences" nodeId="15030">
+                <Shape shapeId="17" name="fences_01" translation="1.95313e-05 12.5921 29.1121" static="true" clipDistance="300" nodeId="15031" materialIds="176" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <TransformGroup name="lamps" translation="-96.4434 14.8481 27.2125" nodeId="15032">
+                <TransformGroup name="lamp_01" translation="-24.1288 -0.011 -24.4148" nodeId="15033">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15034" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15035" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15036">
+                        <TransformGroup name="selfIllum" nodeId="15037">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15038" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15039"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15040" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15041" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_028" translation="-24.1288 -0.011 -10.8" nodeId="15042">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15043" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15044" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15045">
+                        <TransformGroup name="selfIllum" nodeId="15046">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15047" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15048"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15049" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15050" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_029" translation="-24.1288 -0.011 -10.8" nodeId="15051">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15052" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15053" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15054">
+                        <TransformGroup name="selfIllum" nodeId="15055">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15056" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15057"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15058" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15059" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_030" translation="-24.1288 -0.011 0.793882" nodeId="15060">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15061" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15062" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15063">
+                        <TransformGroup name="selfIllum" nodeId="15064">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15065" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15066"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15067" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15068" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_031" translation="-19.1995 -0.011 0.793882" nodeId="15069">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15070" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15071" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15072">
+                        <TransformGroup name="selfIllum" nodeId="15073">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15074" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15075"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15076" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15077" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_032" translation="-0.707115 -0.011 0.793882" nodeId="15078">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15079" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15080" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15081">
+                        <TransformGroup name="selfIllum" nodeId="15082">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15083" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15084"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15085" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15086" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_033" translation="23.3566 -0.011 0.793882" nodeId="15087">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15088" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15089" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15090">
+                        <TransformGroup name="selfIllum" nodeId="15091">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15092" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15093"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15094" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15095" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_034" translation="25.2115 -0.011 14.0033" nodeId="15096">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15097" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15098" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15099">
+                        <TransformGroup name="selfIllum" nodeId="15100">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15101" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15102"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15103" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15104" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_035" translation="25.2115 -0.011 29.0276" nodeId="15105">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15106" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15107" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15108">
+                        <TransformGroup name="selfIllum" nodeId="15109">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15110" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15111"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15112" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15113" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_036" translation="35.3643 -0.011 29.0276" nodeId="15114">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15115" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15116" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15117">
+                        <TransformGroup name="selfIllum" nodeId="15118">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15119" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15120"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15121" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15122" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_037" translation="46.8387 -0.011 29.0276" nodeId="15123">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15124" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15125" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15126">
+                        <TransformGroup name="selfIllum" nodeId="15127">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15128" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15129"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15130" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15131" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_038" translation="46.8387 -0.011 14.3616" nodeId="15132">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15133" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15134" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15135">
+                        <TransformGroup name="selfIllum" nodeId="15136">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15137" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15138"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15139" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15140" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_039" translation="48.3201 -0.011 0.804297" nodeId="15141">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15142" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15143" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15144">
+                        <TransformGroup name="selfIllum" nodeId="15145">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15146" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15147"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15148" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15149" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_040" translation="71.3149 -0.011 0.804297" nodeId="15150">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15151" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15152" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15153">
+                        <TransformGroup name="selfIllum" nodeId="15154">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15155" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15156"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15157" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15158" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_041" translation="95.3063 -0.011 0.804297" nodeId="15159">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15160" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15161" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15162">
+                        <TransformGroup name="selfIllum" nodeId="15163">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15164" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15165"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15166" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15167" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_042" translation="119.309 -0.011 0.804297" nodeId="15168">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15169" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15170" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15171">
+                        <TransformGroup name="selfIllum" nodeId="15172">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15173" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15174"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15175" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15176" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_043" translation="144.68 -0.011 0.804297" nodeId="15177">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15178" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15179" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15180">
+                        <TransformGroup name="selfIllum" nodeId="15181">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15182" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15183"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15184" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15185" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_044" translation="145.69 -0.011 14.3726" nodeId="15186">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15187" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15188" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15189">
+                        <TransformGroup name="selfIllum" nodeId="15190">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15191" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15192"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15193" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15194" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_045" translation="145.69 -0.011 28.9724" nodeId="15195">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15196" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15197" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15198">
+                        <TransformGroup name="selfIllum" nodeId="15199">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15200" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15201"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15202" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15203" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_046" translation="156.822 -0.011 28.9724" nodeId="15204">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15205" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15206" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15207">
+                        <TransformGroup name="selfIllum" nodeId="15208">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15209" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15210"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15211" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15212" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_047" translation="168.08 -0.011 28.9724" nodeId="15213">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15214" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15215" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15216">
+                        <TransformGroup name="selfIllum" nodeId="15217">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15218" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15219"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15220" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15221" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_048" translation="168.08 -0.011 14.2336" nodeId="15222">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15223" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15224" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15225">
+                        <TransformGroup name="selfIllum" nodeId="15226">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15227" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15228"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15229" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15230" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_049" translation="169.364 -0.011 0.768992" nodeId="15231">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15232" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15233" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15234">
+                        <TransformGroup name="selfIllum" nodeId="15235">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15236" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15237"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15238" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15239" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_050" translation="191.313 -0.011 0.768992" nodeId="15240">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15241" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15242" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15243">
+                        <TransformGroup name="selfIllum" nodeId="15244">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15245" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15246"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15247" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15248" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_051" translation="217.435 -0.011 0.768992" nodeId="15249">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15250" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15251" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15252">
+                        <TransformGroup name="selfIllum" nodeId="15253">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15254" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15255"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15256" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15257" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_052" translation="217.435 -0.011 -11.7094" nodeId="15258">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15259" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15260" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15261">
+                        <TransformGroup name="selfIllum" nodeId="15262">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15263" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15264"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15265" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15266" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="lamp_053" translation="217.435 -0.011 -23.6382" nodeId="15267">
+                    <Shape shapeId="18" name="lampGlass" translation="0 -0.165506 1.95371e-05" static="true" clipDistance="300" nodeId="15268" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="19" name="lamp" translation="0 -1.42529 5.45697e-14" static="true" clipDistance="300" nodeId="15269" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="96.4434 -14.8481 -27.2125" nodeId="15270">
+                        <TransformGroup name="selfIllum" nodeId="15271">
+                            <Shape shapeId="20" name="lampLight" translation="-96.4434 14.8481 27.2125" static="true" clipDistance="300" nodeId="15272" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                            <TransformGroup name="coronaOrange" translation="-96.443 14.75 27.212" rotation="90 0 0" scale="1.8 1.8 1.8" static="true" clipDistance="300" nodeId="15273"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-96.4434 14.8481 27.2125" rotation="-90 0 0" clipDistance="100" nodeId="15274" type="spot" color="1 0.698 0.349" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="90" dropOff="1"/>
+                        <Shape shapeId="21" name="lampGlassLit" translation="-96.4434 14.6826 27.2125" static="true" clipDistance="300" nodeId="15275" materialIds="280" castsShadows="true" receiveShadows="true"/>
+                    </TransformGroup>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="pierExterior" nodeId="15276">
+                <Shape shapeId="22" name="pierExterior_02" translation="48.1626 -0.0792468 56.9648" static="true" nodeId="15277" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="23" name="pierExterior_01" translation="-60.568 5.92075 43.435" static="true" nodeId="15278" materialIds="176" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <TransformGroup name="poles" translation="-0.107466 12.5218 0.413621" nodeId="15279">
+                <Shape shapeId="24" name="chains" translation="0.0254055 0.406326 0" static="true" clipDistance="300" nodeId="15280" materialIds="214" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="25" name="poles" translation="1.49086e-06 0 0" static="true" clipDistance="300" nodeId="15281" materialIds="176" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <TransformGroup name="puddles" nodeId="15282">
+                <Shape shapeId="26" name="puddle_01" translation="-30.2473 11.9444 17.5924" rotation="0 90 0" static="true" clipDistance="300" nodeId="15283" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_02" translation="-16.3748 11.9444 11.6121" static="true" clipDistance="300" nodeId="15284" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_03" translation="-78.3867 11.9444 23.8327" rotation="0 -90 0" static="true" clipDistance="300" nodeId="15285" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="27" name="puddle_04" translation="-97.5225 11.9444 15.7894" rotation="0 -214.688 0" static="true" clipDistance="300" nodeId="15286" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_05" translation="-103.402 11.9444 23.6607" rotation="0 -302.233 0" scale="0.813425 0.813425 0.813425" static="true" clipDistance="300" nodeId="15287" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_06" translation="20.5527 11.9444 16.7755" rotation="0 90 0" static="true" clipDistance="300" nodeId="15288" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_07" translation="44.8155 11.9444 25.0665" static="true" clipDistance="300" nodeId="15289" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_08" translation="93.8527 11.9444 19.5976" rotation="0 -118.11 0" static="true" clipDistance="300" nodeId="15290" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_09" translation="106.589 11.9444 13.5326" rotation="0 -241.735 0" static="true" clipDistance="300" nodeId="15291" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_010" translation="66.8245 11.9444 48.0242" rotation="0 -173.334 0" static="true" clipDistance="300" nodeId="15292" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="28" name="puddle_011" translation="53.8032 11.9444 52.7524" rotation="0 -280.272 0" static="true" clipDistance="300" nodeId="15293" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="28" name="puddle_012" translation="-53.8509 11.9444 52.7524" rotation="0 -280.272 0" static="true" clipDistance="300" nodeId="15294" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="28" name="puddle_013" translation="-68.2796 11.9444 45.3875" rotation="0 -392.205 0" static="true" clipDistance="300" nodeId="15295" materialIds="62" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="26" name="puddle_014" translation="-52.1856 11.9444 27.9467" rotation="0 -465 0" static="true" clipDistance="300" nodeId="15296" materialIds="62" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <TransformGroup name="groundLamps" translation="-17.4696 12.3904 13.1399" nodeId="15297">
+                <TransformGroup name="smallLamp_01" translation="22.4476 -0.46961 -0.451832" nodeId="15298">
+                    <Shape shapeId="29" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15299" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="30" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15300" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15301">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15302">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15303"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15304" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="45 0 0" clipDistance="100" nodeId="15305" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_02" translation="15.003 -0.46961 -0.451832" nodeId="15306">
+                    <Shape shapeId="29" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15307" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="30" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15308" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15309">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15310">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15311"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15312" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="45 0 0" clipDistance="100" nodeId="15313" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_03" translation="-26.3472 -0.46961 0.682851" nodeId="15314">
+                    <Shape shapeId="32" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15315" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="33" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15316" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15317">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15318">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15319"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15320" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15321" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_04" translation="-36.9421 -0.46961 0.682851" nodeId="15322">
+                    <Shape shapeId="32" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15323" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="34" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15324" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15325">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15326">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15327"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15328" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15329" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_05" translation="-58.4292 -0.46961 -0.516155" nodeId="15330">
+                    <Shape shapeId="35" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15331" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="36" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15332" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15333">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15334">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15335"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15336" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15337" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_06" translation="-67.1314 -0.46961 -0.516155" nodeId="15338">
+                    <Shape shapeId="35" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15339" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="37" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15340" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15341">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15342">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15343"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15344" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15345" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_07" translation="-85.0879 -0.46961 -0.516155" nodeId="15346">
+                    <Shape shapeId="38" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15347" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="36" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15348" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15349">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15350">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15351"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15352" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15353" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_08" translation="-93.1498 -0.46961 -0.516155" nodeId="15354">
+                    <Shape shapeId="35" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15355" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="39" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15356" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15357">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15358">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15359"/>
+                            <Shape shapeId="40" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15360" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="37.3598 0 0" clipDistance="100" nodeId="15361" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_09" translation="44.0732 -0.46961 -0.451832" nodeId="15362">
+                    <Shape shapeId="41" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15363" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="30" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15364" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15365">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15366">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15367"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15368" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="45 0 0" clipDistance="100" nodeId="15369" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_010" translation="51.6952 -0.46961 -0.451832" nodeId="15370">
+                    <Shape shapeId="41" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15371" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="30" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15372" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15373">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15374">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15375"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15376" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="45 0 0" clipDistance="100" nodeId="15377" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_011" translation="93.1499 -0.46961 0.779259" nodeId="15378">
+                    <Shape shapeId="42" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15379" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="43" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15380" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15381">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15382">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15383"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15384" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="35.1889 0 0" clipDistance="100" nodeId="15385" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_012" translation="82.5374 -0.46961 0.779259" nodeId="15386">
+                    <Shape shapeId="44" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15387" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="43" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15388" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15389">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15390">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15391"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15392" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="35.1889 0 0" clipDistance="100" nodeId="15393" type="spot" color="0.5372 1 0.7843" emitDiffuse="true" emitSpecular="true" decayRate="1" range="9" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_013" translation="95.3314 -0.46961 10.8099" rotation="0 -90 0" nodeId="15394">
+                    <Shape shapeId="45" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15395" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="46" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15396" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15397">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15398">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15399"/>
+                            <Shape shapeId="47" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15400" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="35.1889 0 0" clipDistance="100" nodeId="15401" type="spot" color="1 0.7 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_014" translation="-42.6694 -0.46961 10.8099" rotation="0 -450 0" nodeId="15402">
+                    <Shape shapeId="48" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15403" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="49" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15404" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15405">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15406">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15407"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15408" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="35.1889 0 0" clipDistance="100" nodeId="15409" type="spot" color="1 0.7 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="smallLamp_015" translation="-74.875 -0.46961 10.8099" rotation="0 -630 0" nodeId="15410">
+                    <Shape shapeId="50" name="groundLampGlass" translation="0.0146771 -0.00385495 -0.0294048" rotation="-108.104 0 0" scale="0.728321 0.728321 0.728321" static="true" clipDistance="300" nodeId="15411" materialIds="210" castsShadows="true" receiveShadows="true"/>
+                    <Shape shapeId="49" name="groundLamp" translation="-3.05176e-07 0 -0.044082" static="true" clipDistance="300" nodeId="15412" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                    <TransformGroup name="light" translation="4.51073e-07 0.513995 -0.117239" rotation="26.3286 0 0" nodeId="15413">
+                        <TransformGroup name="selfIllum" translation="135.223 -14.7483 -34.8954" nodeId="15414">
+                            <TransformGroup name="coronaWhite" translation="-135.223 14.7483 34.8954" rotation="225 0 0" static="true" clipDistance="300" nodeId="15415"/>
+                            <Shape shapeId="31" name="selfIllum" translation="-135.223 14.3201 35.1889" rotation="-26.3286 0 0" static="true" clipDistance="300" nodeId="15416" materialIds="176" castsShadows="true" receiveShadows="true"/>
+                        </TransformGroup>
+                        <Light name="lampLight1" translation="-2.92969e-05 -0.0416652 0.0158765" rotation="35.1889 0 0" clipDistance="100" nodeId="15417" type="spot" color="1 0.7 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="15" coneAngle="90" dropOff="1"/>
+                    </TransformGroup>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="trash" nodeId="15418">
+                <Shape shapeId="51" name="trash_01" translation="-52.888 11.945 22.2436" static="true" nodeId="15419" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_02" translation="-57.6095 11.945 25.2786" rotation="0 -105 0" static="true" nodeId="15420" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_03" translation="-97.2903 11.945 22.291" rotation="0 -33.6113 0" static="true" nodeId="15421" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_04" translation="-32.2468 11.945 1.02935" static="true" nodeId="15422" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_05" translation="-100.409 11.945 12.7356" rotation="0 23.072 0" static="true" nodeId="15423" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_06" translation="-99.3757 11.945 27.4193" rotation="0 -60 0" static="true" nodeId="15424" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_07" translation="-117.126 11.945 1.52011" rotation="0 -90 0" static="true" nodeId="15425" materialIds="159" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="51" name="trash_08" translation="-91.2732 11.945 8.82429" rotation="0 -90 0" static="true" nodeId="15426" materialIds="159" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <Shape shapeId="52" name="pierCol01" translation="-60 0 50" static="true" nodeId="15427" materialIds="318" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="53" name="pierCol02" translation="60 0 50" static="true" nodeId="15428" materialIds="318" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <TransformGroup name="smallCrane2" translation="-96.9319 11.9012 23.8286" clipDistance="1200" nodeId="15429" lodDistance="0 100">
+                <TransformGroup name="lod0" nodeId="15430">
+                    <Shape shapeId="54" name="smallCrane" nodeId="15431" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="lod1" nodeId="15432">
+                    <Shape shapeId="55" name="smallCraneLOD" translation="0.406283 6.53271 1.84388" static="true" nodeId="15433" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="smallCrane3" translation="-55.2768 11.9012 23.8286" clipDistance="1200" nodeId="15434" lodDistance="0 100">
+                <TransformGroup name="lod0" nodeId="15435">
+                    <Shape shapeId="54" name="smallCrane" nodeId="15436" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="lod1" nodeId="15437">
+                    <Shape shapeId="55" name="smallCraneLOD" translation="0.406283 6.53271 1.84388" static="true" nodeId="15438" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="smallCrane4" translation="82.51 11.9012 23.8286" clipDistance="1200" nodeId="15439" lodDistance="0 100">
+                <TransformGroup name="lod0" nodeId="15440">
+                    <Shape shapeId="54" name="smallCrane" nodeId="15441" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+                <TransformGroup name="lod1" nodeId="15442">
+                    <Shape shapeId="55" name="smallCraneLOD" translation="0.406283 6.53271 1.84388" static="true" nodeId="15443" materialIds="213" castsShadows="true" receiveShadows="true"/>
+                </TransformGroup>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="15301">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15309">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15317">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15325">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15333">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15341">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15349">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15357">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15365">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15373">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15381">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15389">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15397">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15405">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="15413">
+            <Attribute name="onCreate" type="scriptCallback" value="Nightlight2.onCreate"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<items>
+
+<item mapBoundId="sellingStationVehicles" className="Workshop" filename="$moddir$vulcanoisland/exports/Sellpoints/sellingStationVehicles.xml" position="224.442 89.973 -1696.191" rotation="180 0 -180" />
+<item mapBoundId="SellingStationCentralExports" className="SellingStationPlaceable" filename="$moddir$vulcanoisland/exports/Sellpoints/sellingStationDairy.xml" position="6.932 89.988 -1733.991" rotation="0 0 0" />
+<item mapBoundId="SellingStationWood" className="WoodSellStationPlaceable" filename="$moddir$vulcanoisland/exports/Sellpoints/woodSelling/sellingStationWood.xml" position="-1.893 89.984 -1769.111" rotation="0 90 0" />
+<item mapBoundId="gasStation" className="BuyingStationPlaceable" filename="$moddir$vulcanoisland/exports/Sellpoints/trigger/gasStation/gasStation.xml" position="128.196 89.988 -1639.618" rotation="0 0 0" />
+<item mapBoundId="limeStation" className="BuyingStationPlaceable" filename="$moddir$vulcanoisland/exports/Sellpoints/lime/limeStation.xml" position="137.713 89.988 -1727.953" rotation="0 0 0" />
+<item mapBoundId="silo" className="SiloPlaceable" filename="$moddir$vulcanoisland/exports/silos/grainSiloRailroad02/grainSiloRailroad02a.xml" position="-118.841 89.75 -1727.465" rotation="0 0 0" />
+</items>

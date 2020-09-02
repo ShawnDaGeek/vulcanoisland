@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<map>
+    <farmlands densityMapFilename="maps/map01/map_farmland.grle" numChannels="6" pricePerHa="420.0">
+<farmland id="1"  priceScale="1.1"    npcName="NPC_US_18"  defaultFarmProperty="false" />
+<farmland id="2"  priceScale="1.2"    npcName="NPC_US_17"  defaultFarmProperty="false" />
+<farmland id="3"  priceScale="1.3"    npcName="NPC_US_16"  defaultFarmProperty="false" />
+<farmland id="4"  priceScale="1.4"    npcName="NPC_US_15"  defaultFarmProperty="false" />
+<farmland id="5"  priceScale="1.5"    npcName="NPC_US_14"  defaultFarmProperty="false" />
+<farmland id="6"  priceScale="1.0"    npcName="NPC_US_13"  defaultFarmProperty="true" />
+    </farmlands>
+</map>

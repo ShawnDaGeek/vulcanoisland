@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Sample Mod Map 2" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert1" materialId="4" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="WoodChips.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="sellingStationWoodChips" rotation="-2.57315e-06 0 2.30016e-06" nodeId="9">
+      <TransformGroup name="gameplay" nodeId="10">
+        <TransformGroup name="IN" nodeId="11">
+          <TransformGroup name="unloadingStation" nodeId="12">
+            <TransformGroup name="unloadingTriggers" nodeId="13">
+              <Shape shapeId="1" name="exactFillRootNode" static="true" collisionMask="1073741824" nodeId="14" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="2" name="baleTrigger" translation="-42.1476 0.399378 12.5889" rotation="3.85276e-06 57.3701 3.05561e-05" static="true" trigger="true" collisionMask="16781312" nodeId="15" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <Shape shapeId="3" name="baleTrigger" translation="5.854 0 1.646" rotation="0 -20 0" static="true" trigger="true" collisionMask="16781312" nodeId="16" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="mapPosition" translation="-65 0 73" nodeId="17"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="9">
+      <Attribute name="mapPositionIndex" type="string" value="0|1"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

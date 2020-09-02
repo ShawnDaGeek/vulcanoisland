@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="Starter Map 4x size" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="8" filename="$data/maps/textures/american/buildingsArray_diffuse.png"/>
+        <File fileId="9" filename="$data/maps/textures/american/buildingsArray_normal.png"/>
+        <File fileId="10" filename="$data/maps/textures/american/buildingsArray_specular.png"/>
+        <File fileId="23" filename="$data/maps/textures/american/grainSiloRailroad01_specular.png"/>
+        <File fileId="12" filename="$data/maps/textures/american/grainSiloRailroad02_specular.png"/>
+        <File fileId="18" filename="$data/maps/textures/american/metalGridGrating_diffuse.png"/>
+        <File fileId="19" filename="$data/maps/textures/american/metalGridGrating_normal.png"/>
+        <File fileId="20" filename="$data/maps/textures/american/metalGridGrating_specular.png"/>
+        <File fileId="21" filename="$data/maps/textures/american/wheatBottom_diffuse.png"/>
+        <File fileId="22" filename="$data/maps/textures/american/wheatBottom_normal.png"/>
+        <File fileId="17" filename="$data/maps/textures/shared/customGradient21.png"/>
+        <File fileId="3" filename="$data/maps/textures/shared/trainUnloadingPit_diffuse.png"/>
+        <File fileId="4" filename="$data/maps/textures/shared/trainUnloadingPit_normal.png"/>
+        <File fileId="5" filename="$data/maps/textures/shared/trainUnloadingPit_specular.png"/>
+        <File fileId="6" filename="$data/maps/textures/shared/wheatBottom_diffuse.png"/>
+        <File fileId="7" filename="$data/maps/textures/shared/wheatBottom_normal.png"/>
+        <File fileId="11" filename="$data/shaders/buildingShader.xml"/>
+        <File fileId="26" filename="$data/shaders/vehicleShader.xml"/>
+        <File fileId="2" filename="$data/shared/default_normal.png"/>
+        <File fileId="25" filename="$data/shared/default_specular.png"/>
+    </Files>
+    <Materials>
+        <Material name="Arms" materialId="14754" diffuseColor="0.8 0.8 0.8 1" customShaderId="26" customShaderVariation="colorMask">
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="25"/>
+            <CustomParameter name="RDT" value="1 1 0 0"/>
+            <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+            <CustomParameter name="colorMat0" value="0.275 0.278 0.243 1"/>
+            <CustomParameter name="colorMat1" value="0.753 0.753 0.753 1"/>
+            <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+            <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+            <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+            <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+            <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+            <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+        </Material>
+        <Material name="wheatBottom_mat" materialId="14728">
+            <Texture fileId="6"/>
+            <Normalmap fileId="7"/>
+        </Material>
+        <Material name="buildingsArraySilo02Roof_mat" materialId="14758" customShaderId="11" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+            <Texture fileId="8"/>
+            <Normalmap fileId="9"/>
+            <Glossmap fileId="10"/>
+            <Custommap name="mMaskMap" fileId="12"/>
+            <Custommap name="mGradientMap" fileId="17"/>
+        </Material>
+        <Material name="Holder" materialId="14759" diffuseColor="0.164706 0.156863 0.129412 1" customShaderId="26" customShaderVariation="colorMask">
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="25"/>
+            <CustomParameter name="RDT" value="1 1 0 0"/>
+            <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+            <CustomParameter name="colorMat0" value="0.275 0.278 0.243 1"/>
+            <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+            <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+            <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+            <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+            <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+            <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+            <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+        </Material>
+        <Material name="Bracket" materialId="14755" diffuseColor="0.376471 0.494118 0.4 1" customShaderId="26" customShaderVariation="colorMask">
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="25"/>
+            <CustomParameter name="RDT" value="1 1 0 0"/>
+            <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+            <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+            <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+            <CustomParameter name="colorMat2" value="0.416 0.424 0.431 7"/>
+            <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+            <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+            <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+            <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+            <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+        </Material>
+        <Material name="dumpPitGrid_mat" materialId="14757">
+            <Texture fileId="18"/>
+            <Normalmap fileId="19"/>
+            <Glossmap fileId="20"/>
+        </Material>
+        <Material name="dumpPitGrainPlane_mat" materialId="14756">
+            <Texture fileId="21"/>
+            <Normalmap fileId="22"/>
+        </Material>
+        <Material name="buildingsArray_mat" materialId="14751" customShaderId="11" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="8"/>
+            <Normalmap fileId="9"/>
+            <Glossmap fileId="10"/>
+            <Custommap name="mMaskMap" fileId="23"/>
+        </Material>
+        <Material name="buildingsArray_mat" materialId="14753" customShaderId="11" customShaderVariation="USE_TEXTURE_ARRAY">
+            <Texture fileId="8"/>
+            <Normalmap fileId="9"/>
+            <Glossmap fileId="10"/>
+            <Custommap name="mMaskMap" fileId="12"/>
+        </Material>
+        <Material name="trainUnloadingPit_mat" materialId="14750">
+            <Texture fileId="3"/>
+            <Normalmap fileId="4"/>
+            <Glossmap fileId="5"/>
+        </Material>
+        <Material name="dischargeEffect_mat" materialId="14752" diffuseColor="0.494118 0.494118 0.494118 1">
+            <Normalmap fileId="2"/>
+        </Material>
+        <Material name="lambert1" materialId="12" diffuseColor="0.494118 0.494118 0.494118 1"/>
+    </Materials>
+    <Shapes externalShapesFile="grainSiloRailroad02a.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="grainSiloRailroad02" translation="79.7348 89.75 74.276" rotation="-180 0 -180" nodeId="14778">
+            <TransformGroup name="gameplay" nodeId="14779">
+                <TransformGroup name="IN" nodeId="14780">
+                    <TransformGroup name="unloadingStationTrain" translation="0 1.68266 0" nodeId="14781">
+                        <TransformGroup name="unloadingTriggers" nodeId="14782">
+                            <Shape shapeId="1" name="exactFillRootNode" translation="-15.5 -2.95673 -17" scale="1 1.76841 1" static="true" collisionMask="1073741824" nodeId="14783" materialIds="12" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                        </TransformGroup>
+                    </TransformGroup>
+                    <TransformGroup name="unloadingStationTrailer" nodeId="14784">
+                        <TransformGroup name="unloadingTriggers" nodeId="14785">
+                            <Shape shapeId="1" name="exactFillRootNode" translation="-16.5 1.8 11" static="true" collisionMask="1073741824" nodeId="14786" materialIds="12" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                        </TransformGroup>
+                    </TransformGroup>
+                    <TransformGroup name="unloadingStationTrain" translation="0 1.68266 -4.98196" nodeId="14787">
+                        <TransformGroup name="unloadingTriggers" nodeId="14788"/>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="OUT" nodeId="14796">
+                    <TransformGroup name="loadingStationTrailer" translation="0.55 0 -0.7" nodeId="14797">
+                        <TransformGroup name="loadingTriggers" nodeId="14798">
+                            <Shape shapeId="2" name="loadingTrigger" translation="16.9997 2 11" static="true" trigger="true" collisionMask="1073741824" nodeId="14799" materialIds="12" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                            <TransformGroup name="dischargeNode" translation="17 5.2 11" nodeId="14800"/>
+                            <TransformGroup name="dischargeEffect" translation="17 5.2 11" nodeId="14801">
+                                <Shape shapeId="3" name="grain" clipDistance="100" nodeId="14802" materialIds="14752" castsShadows="true" receiveShadows="true"/>
+                                <Shape shapeId="4" name="smoke" translation="0 -1 0" clipDistance="100" nodeId="14803" materialIds="14752" castsShadows="true" receiveShadows="true"/>
+                            </TransformGroup>
+                        </TransformGroup>
+                    </TransformGroup>
+                    <TransformGroup name="loadingStationTrain" nodeId="14804">
+                        <TransformGroup name="loadingTriggers" nodeId="14805">
+                            <Shape shapeId="5" name="loadingTrigger" translation="-15.4848 3.5 -16.9747" static="true" trigger="true" collisionMask="1073741824" nodeId="14806" materialIds="12" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                            <TransformGroup name="dischargeNode" translation="-15.485 7.7 -16.975" nodeId="14807"/>
+                            <TransformGroup name="dischargeEffect" translation="-15.485 7.7 -16.975" nodeId="14808">
+                                <Shape shapeId="3" name="grain" clipDistance="100" nodeId="14809" materialIds="14752" castsShadows="true" receiveShadows="true"/>
+                                <Shape shapeId="4" name="smoke" translation="0 -3.7 0" clipDistance="100" nodeId="14810" materialIds="14752" castsShadows="true" receiveShadows="true"/>
+                            </TransformGroup>
+                        </TransformGroup>
+                    </TransformGroup>
+                </TransformGroup>
+                <TransformGroup name="storageGrainSiloRailroad02" nodeId="14832"/>
+                <TransformGroup name="mapPosition" translation="0 0 11" nodeId="14833"/>
+            </TransformGroup>
+            <Shape shapeId="6" name="trainUnloadingPit" translation="-15.4817 0.0923906 -16.904" rotation="-3.20165e-07 0 0" static="true" clipDistance="400" nodeId="14834" materialIds="14750" castsShadows="true" receiveShadows="true">
+                <Shape shapeId="7" name="trainUnloadingPitGrain" static="true" clipDistance="100" nodeId="14835" materialIds="14728" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+            <Shape shapeId="8" name="grainSiloRailroad02" translation="0.0730812 0.152911 0.029579" rotation="180 180 -180" static="true" clipDistance="1000" nodeId="14836" materialIds="14753" castsShadows="true" receiveShadows="true">
+                <Shape shapeId="9" name="grainSiloRailroad02Roof" static="true" nodeId="14837" materialIds="14758" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="10" name="grainSiloRailroad01DumpPitFrame" static="true" clipDistance="100" nodeId="14838" materialIds="14753" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="11" name="grainSiloRailroad01DumpPitGrid" static="true" clipDistance="100" nodeId="14839" materialIds="14757" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="12" name="grainSiloRailroad01DumpPitGrainPlane" static="true" clipDistance="100" nodeId="14840" materialIds="14756" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="13" name="trainLoader" translation="-15.5 0 -4.5" static="true" clipDistance="1000" nodeId="14841" materialIds="14751" castsShadows="true" receiveShadows="true"/>
+                <TransformGroup name="hoseTray" translation="-15.44 12.743 -9.1119" rotation="-24.2537 8.14222e-13 -9.70628e-20" scale="1.77098 4.66732 2.49797" clipDistance="6000" nodeId="14866">
+                    <Shape shapeId="14" name="LeftBrackets" translation="-0.104753 0.3087 -0.076894" rotation="90 -0 0" scale="1 0.6875 1" clipDistance="6000" nodeId="14867" materialIds="14755"/>
+                    <Shape shapeId="14" name="RightBrackets" translation="0.104753 0.3087 -0.076894" rotation="90 -0 0" scale="1 0.6875 1" clipDistance="6000" nodeId="14868" materialIds="14755"/>
+                    <Shape shapeId="15" name="Holder" translation="0 0.250055 -2.75377" scale="0.125 0.05 2.85" clipDistance="6000" nodeId="14869" materialIds="14759"/>
+                    <Shape shapeId="16" name="LeftArms" translation="-0.104753 0.3087 -0.076894" clipDistance="6000" nodeId="14870" materialIds="14754"/>
+                    <Shape shapeId="17" name="RightArms" translation="0.107058 0.30482 -0.076894" scale="1.025 1.025 1.025" clipDistance="6000" nodeId="14871" materialIds="14754"/>
+                    <TransformGroup name="attachers" nodeId="14872">
+                        <TransformGroup name="connectorLeft" translation="0 0.295 0" rotation="0 180 0" nodeId="14873"/>
+                        <TransformGroup name="connectorRight" translation="0 0.295 -5.52461" nodeId="14874"/>
+                    </TransformGroup>
+                </TransformGroup>
+            </Shape>
+        </TransformGroup>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="14778">
+            <Attribute name="mapPositionIndex" type="string" value="0|3"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_station_woodSellingTrigger</name>
+        <image>store_sellingStationWoodTrigger.png</image>
+        <price>5000</price>
+        <dailyUpkeep>7</dailyUpkeep>
+        <functions>
+            <function>$l10n_function_sellingStationWoodTrigger</function>
+        </functions>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+        <vertexBufferMemoryUsage>1848</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>264</indexBufferMemoryUsage>
+        <textureMemoryUsage>305976</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <placeableType>woodSellPlacable</placeableType>
+    <filename>exports/Sellpoints/woodSelling/sellingStationWoodTrigger.i3d</filename>
+    <placement testSizeX="8" testSizeZ="6" sizeX="8" sizeZ="6" useRandomYRotation="false" useManualYRotation="true" />
+
+    <woodSellStation stationName="$l10n_station_woodSellingTrigger" triggerNode="1|0" sellTrigger="1|1" appearsOnPDA="false" />
+
+    <clearAreas>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+        </levelAreas>
+    </leveling>
+    
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="0|0" widthNode="0|0|0" heightNode="0|0|1" />
+        </maskAreas>
+    </seasons>
+
+    <triggerMarkers>
+        <triggerMarker node="2" />
+    </triggerMarkers>
+
+</placeable>

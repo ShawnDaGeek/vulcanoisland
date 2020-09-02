@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foliageType distanceTexturePath="distance">
+
+    <!-- snow mask -->
+    <foliageLayer cellSize="8" objectMask="16711935" decalLayer="0" numBlocksPerUnit="1.8" shapeSource="snowMask.i3d">
+        <foliageStateDefaults />
+        <foliageLodDefaults lod="0" viewDistance="0" />
+        <foliageState width="0.8" height="0.3" widthVariance="0.1" heightVariance="0.1" horizontalPositionVariance="0.3">
+            <foliageShape>
+                <foliageLod blockShape="0>0" atlasSize="1" atlasOffset="1 0" />
+            </foliageShape>
+        </foliageState>
+    </foliageLayer>
+
+</foliageType>

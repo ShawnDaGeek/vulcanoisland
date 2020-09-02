@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="New Empire" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="5" filename="textures/Tafel/DigitalBillboard_diffuse.png"/>
+        <File fileId="6" filename="textures/Tafel/DigitalBillboard_normal.png"/>
+        <File fileId="1" filename="textures/Tafel/ImageSlider_diffuse.png"/>
+        <File fileId="2" filename="textures/Tafel/ImageSlider_normal.png"/>
+        <File fileId="4" filename="textures/Tafel/scrollUVShader.xml"/>
+    </Files>
+    <Materials>
+        <Material name="lambert2" materialId="55780" diffuseColor="0.494118 0.494118 0.494118 1" specularColor="0.0666667 1 0"/>
+        <Material name="billboard_mat" materialId="55782" specularColor="0.494118 1 0.4">
+            <Texture fileId="5"/>
+            <Normalmap fileId="6" bumpDepth="0"/>
+        </Material>
+        <Material name="imageSlider_mat" materialId="55781" specularColor="1 1 0" alphaBlending="true" customShaderId="4">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2" bumpDepth="0"/>
+            <CustomParameter name="uvScrollSpeed" value="0 0 1 0"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="adsBillBoardShawnDaGeek.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="billboard" translation="-20.4614 89.7347 20.2898" rotation="180 -90 180" nodeId="55792">
+            <TransformGroup name="slidingImages" nodeId="55793">
+                <Shape shapeId="1" name="image_4" translation="-1.0174 4.45228 0.429787" clipDistance="600" nodeId="55794" materialIds="55781" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            </TransformGroup>
+            <TransformGroup name="lods" nodeId="55795" lodDistance="0 25 50">
+                <Shape shapeId="2" name="digitalBillboard_LOD0" clipDistance="200" nodeId="55796" materialIds="55782" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="3" name="digitalBillboard_LOD1" clipDistance="400" nodeId="55797" materialIds="55782" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="4" name="digitalBillboard_LOD2" clipDistance="600" nodeId="55798" materialIds="55782" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+            <Shape shapeId="5" name="ledScreen" translation="-1.0174 4.45228 0.429012" clipDistance="600" nodeId="55799" materialIds="55781" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="6" name="decal" translation="0.367981 2.89194 0.432029" clipDistance="40" nodeId="55800" materialIds="55782" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="7" name="collision_1" translation="0.0167673 1.47951 -0.0875806" visibility="false" static="true" clipDistance="400" nodeId="55801" materialIds="55780" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="8" name="collision_2" translation="-1.01115 4.32263 0.12933" visibility="false" static="true" clipDistance="400" nodeId="55802" materialIds="55780" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Light name="light" translation="-1.66037 0.601497 4.23293" rotation="37.0097 -3.59172 1.04469" nodeId="55803" type="spot" color="2 2 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.0012" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.0005" depthMapResolution="1024" shadowFarDistance="80" shadowExtrusionDistance="200" shadowPerspective="false" decayRate="4" range="8" coneAngle="60" dropOff="5"/>
+            <Light name="light" translation="0.459752 0.640157 4.36603" rotation="28.6008 -2.82531 1.4634" nodeId="55804" type="spot" color="2 2 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.0012" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.0005" depthMapResolution="1024" shadowFarDistance="80" shadowExtrusionDistance="200" shadowPerspective="false" decayRate="4" range="8" coneAngle="60" dropOff="5"/>
+            <Light name="light" translation="0.127491 8.55227 7.00203" rotation="-24.0405 6.2863 -0.223786" nodeId="55805" type="spot" color="2 2 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.0012" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.0005" depthMapResolution="1024" shadowFarDistance="80" shadowExtrusionDistance="200" shadowPerspective="false" decayRate="4" range="8" coneAngle="60" dropOff="5"/>
+            <Light name="light" translation="-2.50494 8.56255 7.29202" rotation="-23.9102 -2.45029 3.65843" nodeId="55806" type="spot" color="2 2 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.0012" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.0005" depthMapResolution="1024" shadowFarDistance="80" shadowExtrusionDistance="200" shadowPerspective="false" decayRate="4" range="8" coneAngle="60" dropOff="5"/>
+        </TransformGroup>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="55793">
+            <Attribute name="onCreate" type="scriptCallback" value="modOnCreate.DigitalBillboard"/>
+            <Attribute name="shuffleImages" type="boolean" value="false"/>
+            <Attribute name="swapInterval" type="float" value="30"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

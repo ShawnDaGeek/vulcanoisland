@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="1" filename="textures/southAmerican/props/barge01_diffuse.png"/>
+        <File fileId="2" filename="textures/southAmerican/props/barge01_normal.png"/>
+        <File fileId="3" filename="textures/southAmerican/props/barge01_specular.png"/>
+        <File fileId="4" filename="textures/southAmerican/props/barge02_diffuse.png"/>
+        <File fileId="5" filename="textures/southAmerican/props/barge02_normal.png"/>
+        <File fileId="6" filename="textures/southAmerican/props/barge02_specular.png"/>
+        <File fileId="7" filename="textures/southAmerican/props/barge_tugboat_diffuse.png"/>
+        <File fileId="8" filename="textures/southAmerican/props/barge_tugboat_normal.png"/>
+        <File fileId="9" filename="textures/southAmerican/props/barge_tugboat_specular.png"/>
+    </Files>
+    <Materials>
+        <Material name="barge02_mat" materialId="275">
+            <Texture fileId="4"/>
+            <Normalmap fileId="5" bumpDepth="0"/>
+            <Glossmap fileId="6"/>
+        </Material>
+        <Material name="barge_tugboat_mat" materialId="243">
+            <Texture fileId="7"/>
+            <Normalmap fileId="8" bumpDepth="0"/>
+            <Glossmap fileId="9"/>
+        </Material>
+        <Material name="barge01_mat" materialId="317">
+            <Texture fileId="1"/>
+            <Normalmap fileId="2"/>
+            <Glossmap fileId="3"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="water_grainBarge.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="grainBarges" objectMask="1045503" nodeId="23334">
+            <Shape shapeId="1" name="barge01" translation="-127.095 73.2979 1130.03" clipDistance="600" nodeId="23335" materialIds="317" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="barge02" translation="-817.142 73.176 1120.1" clipDistance="600" nodeId="23336" materialIds="275" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="barge_tugboat" translation="-97.0028 74.9121 1129.52" rotation="-90 -0 0" clipDistance="600" nodeId="23337" materialIds="243" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="1" name="barge01" translation="-160.284 73.2979 1130.03" clipDistance="600" nodeId="23338" materialIds="317" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="barge02" translation="-850.153 73.176 1135.08" clipDistance="600" nodeId="23339" materialIds="275" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="3" name="barge_tugboat" translation="-880.276 75 1126.99" rotation="90 0 180" clipDistance="600" nodeId="23340" materialIds="243" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="barge02" translation="-817.079 73.176 1135.08" clipDistance="600" nodeId="23341" materialIds="275" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="2" name="barge02" translation="-850.189 73.176 1120.1" clipDistance="600" nodeId="23342" materialIds="275" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+    </Scene>
+</i3D>

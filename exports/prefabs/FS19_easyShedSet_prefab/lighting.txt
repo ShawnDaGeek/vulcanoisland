@@ -1,0 +1,26 @@
+EasyShed 1Small:
+    <dayNightObjects>
+        <dayNightObject node="3|0|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|0|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|1|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|1|0|1" visibleDay="false" visibleNight="true"/>
+    </dayNightObjects>
+EasyShed3Small:
+    <dayNightObjects>
+        <dayNightObject node="3|0|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|0|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|1|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|1|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|2|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|2|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|3|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|3|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|4|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|4|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|5|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|5|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|6|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|6|0|1" visibleDay="false" visibleNight="true"/>
+        <dayNightObject node="3|7|0|0" intensityDay="0" intensityNight="1"/>
+        <dayNightObject node="3|7|0|1" visibleDay="false" visibleNight="true"/>
+    </dayNightObjects>

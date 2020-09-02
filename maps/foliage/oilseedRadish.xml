@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foliageType distanceTexturePath="distance">
+    <!-- oilseed radish -->
+    <foliageLayer cellSize="8" objectMask="16711935" decalLayer="0" densityMapChannelOffset="0" numDensityMapChannels="4" numBlocksPerUnit="1.8" shapeSource="oilseedRadish.i3d">
+        <foliageStateDefaults />
+        <!-- default LOD distances etc -->
+        <foliageLodDefaults lod="0" viewDistance="40" blendOutDistance="4" atlasSize="1" atlasOffset="1 0" texCoords="0 0 1 1" />
+        <foliageLodDefaults lod="1" viewDistance="80" blendOutDistance="4" atlasSize="1" atlasOffset="1 0" texCoords="0 0 1 1" />
+        <!-- 1 0 0 0 - invisible -->
+        <foliageState distanceMap="acre_fine_distance_diffuse.png" />
+        <!-- 0 1 0 0 - green small -->
+        <foliageState distanceMap="foliage_oilseed_distance2_diffuse.png" distanceMapLayer="1" width="0.25" height="0.25" widthVariance="0" heightVariance="0.2" horizontalPositionVariance="0.5">
+            <foliageShape>
+                <foliageLod blockShape="0>0" />
+                <foliageLod blockShape="1>0" />
+            </foliageShape>
+        </foliageState>
+        <!--  -->
+    </foliageLayer>
+</foliageType>

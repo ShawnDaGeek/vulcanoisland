@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="46">
+    <author>TopAce888</author>
+    <version>1.1.0.0</version>
+    <title>
+        <en>Small Wood Selling Station</en>
+        <en>Kleiner Holz-Verkaufsplatz</en>
+    </title>
+    <description>
+        <en><![CDATA[This set contains four small selling stations for wood and woodchips.
+
+The version without decoration is more suitable for consoles because of the lower slot count.
+The sales trigger can be placed anywhere to quickly sell wood. With this version, the floor is neither leveled nor painted and can therefore be sold without leaving any residue.
+
+Small Wood Selling Station:
+Price: 5.000€
+Daily Upkeep: 7€/ Tag
+
+Small Wood Selling Station without decoration:
+Price: 4.000€
+Daily Upkeep: 5€/ Tag
+
+Wood Selling Trigger:
+Price: 50€
+Daily Upkeep: 1€/ Tag
+
+Small Woodchips Selling Station:
+Price: 2.000€
+Upkeep: 3€/Tag
+
+Changelog:
+V1.1.0.0
+-added version of selling station without decoration (lower slot count on consoles)
+-added trigger-only selling station
+-Seasons: added snow on roof
+
+]]>
+        </en>
+        <de><![CDATA[Dieses Set beinhaltet vier kleine Verkaufsstellen für Holz und Hackschnitzel.
+
+Die Version ohne Dekoration ist für Konsolen geeigneter, da der Slot-Count niedriger ist.
+Der Verkaufstrigger kann überall platziert werden, um schnell Holz zu verkaufen. Der Boden wird bei dieser Variante weder eingeebnet, noch bemalt und lässt sich somit rückstandslos wieder verkaufen.
+
+Kleiner Holz-Verkaufsplatz:
+Preis: 5.000€
+Unterhaltskosten: 7€/ Tag
+
+Kleiner Holz-Verkaufsplatz ohne Deko:
+Preis: 3.000€
+Unterhaltskosten: 7€/ Tag
+
+Holz-Verkaufstrigger:
+Preis: 50€
+Unterhaltskosten: 1€/ Tag
+
+Kleiner Hackschnitzel-Verkaufsplatz:
+Preis: 2.000€
+Unterhaltskosten: 3€/Tag
+
+Changelog:
+V1.1.0.0
+-Version vom Verkaufsplatz ohne Deko hinzugefügt (geringerer Slot-Count auf Konsolen)
+-Trigger-only Verkaufsplatz hinzugefügt
+-Seasons: Schneedächer hinzugefügt
+]]>
+        </de>
+
+    </description>
+    <iconFilename>icon_woodSelling.dds</iconFilename>
+    <multiplayer supported="true" />
+    
+    <l10n>
+        <text name="station_woodSelling"> <en>Small Wood Selling Station</en> <de>Kleiner Holz-Verkaufsplatz</de> </text>
+        <text name="station_woodSellingLite"> <en>Small Wood Selling Station w/o deco</en> <de>Kleiner Holz-Verkaufsplatz ohne Deko</de> </text>
+        <text name="station_woodSellingTrigger"> <en>Wood Selling Trigger</en> <de>Holz-Verkaufs-Trigger</de> </text>
+        <text name="station_woodChipSelling"> <en>Small Woddchips Selling Station</en> <de>Kleiner Hackschnitzel-Verkaufsplatz</de> </text>
+        <text name="function_sellingStationWood"> <en>You can sell your wood here.</en> <de>Hier kannst du dein Holz verkaufen.</de> </text>
+        <text name="function_sellingStationWoodTrigger"> <en>You can sell your wood here. This is only a simple trigger without leveling or painting the ground</en> <de>Hier kannst du dein Holz verkaufen. Dies ist nur ein einfacher Verkaufstrigger, ohne dass der Boden bemalt oder eingeebnet wird.</de> </text>
+        <text name="function_sellingStationWoodChips"> <en>You can sell your woodchips here.</en> <de>Hier kannst du deine Hackschnitzel verkaufen.</de> </text>
+    </l10n> 
+
+    <storeItems>
+        <storeItem xmlFilename="sellingStationWood.xml"/>
+        <storeItem xmlFilename="sellingStationWoodLite.xml"/>
+        <storeItem xmlFilename="sellingStationWoodTrigger.xml"/>
+        <storeItem xmlFilename="sellingStationWoodChips.xml"/>
+    </storeItems>
+</modDesc>

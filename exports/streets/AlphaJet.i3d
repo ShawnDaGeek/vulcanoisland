@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+    </Asset>
+    <Files>
+        <File fileId="2" filename="sounds/FS17/bomber.ogg"/>
+        <File fileId="1" filename="textures/FS17/AC_130_Hercules_AA.dds"/>
+    </Files>
+    <Materials>
+        <Material name="Herkules_Normal" materialId="215">
+            <Texture fileId="1"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="AlphaJet.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="Alphajet" translation="84.4999 85.4297 1041.44" rotation="0 30 0" clipDistance="2000" nodeId="5760">
+            <Shape shapeId="1" name="LOD0" scale="0.7 0.7 0.7" clipDistance="2000" nodeId="5761" materialIds="215" receiveShadows="true">
+                <AudioSource name="audio" translation="0.492 2.90224 3.36691" nodeId="5762" fileId="2" range="500" innerRange="500" volume="1" loops="1"/>
+            </Shape>
+        </TransformGroup>
+    </Scene>
+</i3D>
